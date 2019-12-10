@@ -10,7 +10,6 @@ Author: [KristopherRay.com](https://kristopherray.com)
 - [ >= Hugo v0.59.0 - Extended](https://gohugo.io/getting-started/installing/)
 
 **Optional Dependancies:**
-- [NodeJS](https://nodejs.org/en/)
 - [SASS (node-sass)](https://github.com/sass/node-sass)
 
 Public Directory is deployed after "Hugo" is run and compiled.  
