@@ -1,0 +1,79 @@
+{{ partial "head.html" . }}
+
+<body id="home">
+
+{{ partial "header.html" . }}
+
+<section id="banner">
+
+<div class="container">
+
+    <div class="row">
+
+        <div class="col-xs-12 col-sm-6 animated fadeIn delay-1">
+
+            <h1>{{ .Title }}</h1>
+
+            <p>{{ .Content }}</p>
+
+            <a href="#inquire" data-lity class="button">Lightbox &rsaquo;</a>
+
+        </div>
+
+    </div>
+
+</div>
+
+</section>
+
+<section>
+    <div class="container">
+        <div class="row flex-center">
+
+            <div class="col-xs-12 col-sm-6 aos-item">
+                <img data-src="https://picsum.photos/600" class="lazyload img-responsive" alt="Make sure to use IMG ALT Tag">
+            </div>
+
+            <div class="col-xs-12 col-sm-6 aos-item" data-aos="fade-in" data-aos-delay="1000">
+                <h2>Another Cool Section Title</h2>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Expedita laborum natus pariatur veniam vitae. Delectus dicta dolor, doloremque, est facilis inventore laboriosam nostrum officiis praesentium qui recusandae, sunt suscipit tempora.</p>
+
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Expedita laborum natus pariatur veniam vitae. Delectus dicta dolor, doloremque, est facilis inventore laboriosam nostrum officiis praesentium qui recusandae, sunt suscipit tempora.</p>
+
+                <a href="#inquire" data-lity class="button">Lightbox &rsaquo;</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="form">
+    <div class="container">
+        <div class="row">
+
+            {{ partial "form.html" }}
+
+        </div>
+    </div>
+</section>
+
+<div id="inquire" class="lity-hide">
+
+    <div class="container">
+
+        <div class="row">
+            <div class="col-xs-12">
+                <h2>Inquire Now</h2>
+                <p>Please fill out the form below and we'll be in touch as soon as possible!</p>
+                <a href="#" class="button">Button &rsaquo;</a>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+{{ partial "footer.html" . }}
+
+{{ partial "scripts.html" . }}
+
+</body>
+</html>

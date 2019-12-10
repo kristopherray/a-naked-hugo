@@ -1,0 +1,58 @@
+<form accept-charset="UTF-8" action="#" method="POST">
+
+    <input type="hidden" name="utf8" value="Form Source">
+
+    <div class="col-xs-12 col-sm-6 checkbox">
+        <input id="phone_banking" type="checkbox" />
+        <label for="phone_banking">Phone Banking</label>
+    </div>
+    <div class="col-xs-12 col-sm-6 checkbox">
+        <input id="block_walking" type="checkbox" />
+        <label for="block_walking">Block Walking</label>
+    </div>
+    <div class="col-xs-12 col-sm-6 checkbox">
+        <input id="house_party" type="checkbox" />
+        <label for="house_party">House Party</label>
+    </div>
+    <div class="col-xs-12 col-sm-6 checkbox">
+        <input id="yard_sign" type="checkbox" />
+        <label for="yard_sign">Yard Sign</label>
+    </div>
+    <div class="col-xs-12 col-sm-6 checkbox">
+        <input id="social_media" type="checkbox" />
+        <label for="social_media">Social Media</label>
+    </div>
+    <div class="col-xs-12 col-sm-6 checkbox">
+        <input id="fundraise" type="checkbox" />
+        <label for="fundraise">Fundraise</label>
+    </div>
+
+    <div class="col-xs-12 col-sm-6 labelToggle">
+        <label for="name" class="nameLabel">Your Name</label>
+        <input type="text" id="name" class="formField" name="name" placeholder="ex. John Doe" required>
+    </div>
+
+    <div class="col-xs-12 col-sm-6 labelToggle">
+        <label for="email" id="emailLabel">Email Address</label>
+        <input type="email" id="email" name="email" placeholder="ex. yourname@email.com" required class="formField labelToggle">
+    </div>
+
+    <div class="col-xs-12 col-sm-6 labelToggle">
+        <label for="phone" id="phoneLabel">Phone Number</label>
+        <input type="tel" id="phone" name="phone" placeholder="(123) 456-7890" required class="formField labelToggle">
+    </div>
+
+    <div class="col-xs-12 col-sm-6 labelToggle">
+        <label for="zip" id="zipLabel">Zip Code*</label>
+        <input type="text" id="zip" name="zipcode" placeholder="12345" required class="formField labelToggle">
+    </div>
+
+    <div class="col-xs-12  labelToggle">
+        <label for="message" id="messageLabel">Inquire...</label>
+        <textarea name="message" id="message" cols="30" rows="10" placeholder="What can I help you with?" class="formField labelToggle"></textarea>
+    </div>
+
+    <div class="col-xs-12">
+        <button type="submit" class="button">Send Inquiry</button>
+    </div>
+</form>

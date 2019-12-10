@@ -1,0 +1,22 @@
+RewriteEngine On
+# redirect www to non-www
+RewriteCond %{HTTP_HOST} ^www\.siteurl\.com$
+RewriteRule .* https://siteurl.com%{REQUEST_URI} [L,R=301,QSA]
+
+#force HTTPS, this site is behind CloudFlare
+RewriteCond %{HTTP:X-Forwarded-Proto} =http
+RewriteRule .* https://%{HTTP_HOST}%{REQUEST_URI} [R=301,L,QSA]
+
+# /thanks and /thanks/ - send them to /
+RewriteRule ^thanks/?$ / [R=301,L]
+
+RewriteEngine on
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME}\.html -f
+RewriteRule ^(.*)$ $1.html
+
+RewriteEngine on
+# If client request header contains html file extension
+RewriteCond %{THE_REQUEST} ^[A-Z]{3,9}\ /([^.]+\.)+html\ HTTP
+
+ErrorDocument 404 /index.html

@@ -1,0 +1,40 @@
+{{ partial "head.html" . }}
+
+<body {{ if isset .Params "id" }}id='{{ index .Params "id" }}'{{end}} class="single-default">
+
+{{ partial "header.html" . }}
+
+<section id="banner">
+    <div class="container">
+
+        <div class="row">
+            <div class="col-xs-12">
+
+                <h1>{{ .Title }}</h1>
+                <p>{{ .Description }}</p>
+
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<main>
+    <div class="container">
+
+        <div class="row">
+            <div class="col-xs-12">
+
+                {{ .Content }}
+
+            </div>
+        </div>
+    </div>
+</main>
+
+{{ partial "footer.html" . }}
+
+{{ partial "scripts.html" . }}
+
+</body>
+</html>

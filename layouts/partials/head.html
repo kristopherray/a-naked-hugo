@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>{{ .Title }} | {{ .Site.Title }}</title>
+    <meta name="description" content="{{if .IsHome}}{{ $.Site.Params.description }}{{else}}{{.Description}}{{end}}"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
+
+    <meta property="og:title" content="{{ .Title }} | {{ .Site.Title }}"/>
+    <meta property="og:site_name" content="{{ .Title }} | {{ .Site.Title }}"/>
+    <meta property="og:type" content="website"/>
+    <meta property="og:url" content="{{ .Site.BaseURL }}"/>
+    <meta property="og:image" content="{{ .Site.BaseURL }}/img/og-img.png"/>
+    <meta property="og:description" content="{{if .IsHome}}{{ $.Site.Params.description }}{{else}}{{.Description}}{{end}}"/>
+    <meta name="twitter:card" content="summary_large_image"/>
+
+    {{ if isset .Site.Params "twitter_user" }}
+    <meta name="twitter:site" content="@{{ .Site.Params.twitter_user }}" />
+    <meta name="twitter:creator" content="@{{ .Site.Params.twitter_user }}" />
+    {{ end }}
+
+    <meta name="twitter:title" content="{{ .Title }} | {{ .Site.Title }}"/>
+    <meta name="twitter:url" content="{{ .Site.BaseURL }}"/>
+    <meta name="twitter:description" content="{{if .IsHome}}{{ $.Site.Params.description }}{{else}}{{.Description}}{{end}}"/>
+    <meta property="og:image" content="{{ .Site.BaseURL }}/img/og-img.png"/>
+    <meta property="twitter:image" content="{{ .Site.BaseURL }}/img/og-img.png"/>
+    <meta property="og:image:width" content="1200"/>
+    <meta property="og:image:height" content="628"/>
+
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
+
+    {{ $sass := resources.Get "css/style.scss" }}
+    {{ $style := $sass | resources.ToCSS | minify }}
+
+    <link   rel="stylesheet"
+            href="{{ $style.Permalink }}"
+            media="screen">
+
+    {{ if isset .Site.Params "google_analytics" }}
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id={{ .Site.Params.google_analytics }}"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', '{{ .Site.Params.google_analytics }}');
+    </script>
+    {{ end }}
+
+</head>

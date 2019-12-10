@@ -1,0 +1,54 @@
+{{ partial "head.html" . }}
+
+<body {{ if isset .Params "id" }}id='{{ index .Params "id" }}'{{end}} class="list-default">
+
+{{ partial "header.html" . }}
+
+<section id="banner">
+    <div class="container">
+
+        <div class="row">
+            <div class="col-xs-12">
+
+                <h2>{{ .Title }}</h2>
+                <p>{{ .Description }}</p>
+
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<main>
+    <div class="container">
+
+        <div class="row">
+            <div class="col-xs-12">
+                {{ .Content }}
+            </div>
+        </div>
+
+        <div class="row">
+
+            {{ range .Pages }}
+
+            <div class="col-xs-12">
+                <h2><a href="{{ .Permalink }}">{{.Title}}</a></h2>
+                <span class="date">{{.Date.Format "January 2, 2006"}}</span>
+                <p>{{ .Description }}</p>
+                <a href="{{ .Permalink }}" class="text-link">Read More &rsaquo;</a>
+            </div>
+
+            {{ end }}
+
+        </div>
+    </div>
+
+</main>
+
+{{ partial "footer.html" . }}
+
+{{ partial "scripts.html" . }}
+
+</body>
+</html>

@@ -1,0 +1,8 @@
+{
+  "name": "A Naked Hugo Theme",
+  "version": "2.0.0",
+  "repository": "https://github.com/kristopherray/a-naked-hugo.git",
+  "description": "A Naked Hugo Theme",
+  "author": "KristopherRay.com <kris@kristopherray.com>",
+  "license": "MIT"
+}
