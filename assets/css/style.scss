@@ -232,7 +232,7 @@ form {
       }
     }
 
-    input, textarea {
+    input, textarea, button {
       border:none;
       padding:1.25rem .75rem .5rem .7rem;
       font-size:1.25rem;
@@ -249,6 +249,10 @@ form {
       -o-transition: all .35s;
       transition: all .35s;
       border: 2px solid darken(#ccc,10%);
+
+      @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+        line-height:2.2rem;
+      }
 
       &::-webkit-input-placeholder { /* Chrome/Opera/Safari */
         color: $light-grey;
@@ -303,7 +307,13 @@ form {
         &:-moz-placeholder { /* Firefox 18- */
           opacity:1;
         }
+      }
 
+      @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+        &:-ms-input-placeholder { /* IE 10+ */
+          color: $light-grey;
+          opacity: 1;
+        }
       }
 
     }
