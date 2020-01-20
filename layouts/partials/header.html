@@ -4,7 +4,7 @@
 
 <header class="animated fadeInDown">
 
-    <a href="{{ .Site.BaseURL }}" id="headerLogo"><img src='{{ "img/logo.svg" | absURL }}' alt="{{ .Site.Title }} Logo"></a>
+    <a href='{{ "/" | relURL }}' id="headerLogo"><img src='{{ "img/logo.svg" | relURL }}' alt="{{ .Site.Title }} Logo"></a>
 
     <nav>
         <a href="javascript:void(0)" id="toggle-menu"><i class="fa fa-bars"></i>&nbsp; Menu</a>
