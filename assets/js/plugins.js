@@ -202,6 +202,8 @@ addEvent(document, 'mouseout', function(evt) {
             removalDelay: 500, //Delaying the removal in order to fit in the animation of the popup
             mainClass: 'mfp-fade mfp-fade-side', //The actual animation
         });
-        //localStorage.setItem('exitintent_show', 'true'); // Set the flag in localStorage
+
+        // Cookie Lightbox Once
+        localStorage.setItem('exitintent_show', 'true'); // Set the flag in localStorage
     }
 });
