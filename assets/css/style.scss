@@ -1,7 +1,7 @@
 @import "bootstrap.scss"; /* Grid System and Normalize */
-@import "lity.min.scss"; /* Lightbox */
 @import "aos.scss"; /* Section Animations */
 @import "animate.scss"; /* Basic Animations */
+@import "magnific-popup.scss"; /* Basic Animations */
 
 /* Default Variables */
 $header-font:sans-serif;
@@ -541,4 +541,29 @@ footer {
   .button {
     margin-top:1em;
   }
+}
+
+#exit {
+  text-align: center;
+  font-size:18px;
+  color:#fff;
+
+  h2 {
+    font-size:2em;
+  }
+
+  p {
+    margin-bottom:1em;
+  }
+
+  .mfp-close {
+    color:#fff;
+  }
+}
+
+* {
+  transition: filter .25s ease-in-out;
+}
+.mfp-wrap ~ * {
+  filter: blur(10px);
 }
