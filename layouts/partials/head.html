@@ -10,7 +10,7 @@
     <meta property="og:title" content="{{ .Title }} | {{ .Site.Title }}"/>
     <meta property="og:site_name" content="{{ .Title }} | {{ .Site.Title }}"/>
     <meta property="og:type" content="website"/>
-    <meta property="og:url" content="{{ .Site.BaseURL }}"/>
+    <meta property="og:url" content="{{ .Permalink }}"/>
     <meta property="og:image" content="{{ .Site.BaseURL }}/img/og-img.png"/>
     <meta property="og:description" content="{{if .IsHome}}{{ $.Site.Params.description }}{{else}}{{.Description}}{{end}}"/>
     <meta name="twitter:card" content="summary_large_image"/>
@@ -21,7 +21,7 @@
     {{ end }}
 
     <meta name="twitter:title" content="{{ .Title }} | {{ .Site.Title }}"/>
-    <meta name="twitter:url" content="{{ .Site.BaseURL }}"/>
+    <meta name="twitter:url" content="{{ .Permalink }}"/>
     <meta name="twitter:description" content="{{if .IsHome}}{{ $.Site.Params.description }}{{else}}{{.Description}}{{end}}"/>
     <meta property="og:image" content="{{ .Site.BaseURL }}/img/og-img.png"/>
     <meta property="twitter:image" content="{{ .Site.BaseURL }}/img/og-img.png"/>
