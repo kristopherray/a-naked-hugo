@@ -35,6 +35,9 @@
             </div>
 
             <div class="col-xs-12 col-sm-6 aos-item" data-aos="fade-in">
+
+                <div id="counter">10003</div>
+
                 <h2>Another Cool Section Title</h2>
                 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Expedita laborum natus pariatur veniam vitae. Delectus dicta dolor, doloremque, est facilis inventore laboriosam nostrum officiis praesentium qui recusandae, sunt suscipit tempora.</p>
 
@@ -88,6 +91,36 @@
 {{ partial "footer.html" . }}
 
 {{ partial "scripts.html" . }}
+
+<script>
+    function numberWithCommas(x) {
+        return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+    }
+
+    function randRange() {
+        var timeArray = new Array(5,1,200, 500, 10, 400, 5, 1, 2, 250);
+        var newDelay = timeArray[Math.floor(timeArray.length * Math.random())];
+        console.log("New Delay: " + newDelay)
+        // The delays are too small, so multipling x10 or something.
+        return newDelay * 10;
+    }
+    var target;
+    var counter;
+    $(document).ready( function() {
+        //var delay = toggleSomething();
+        target = $('#counter');
+        counter = parseInt( target.text(), 10 );
+        console.log("Starting counter at: " + counter)
+        randomTick();
+    } );
+    function randomTick() {
+        setTimeout(() => {
+            target.text(numberWithCommas(counter++));
+            randomTick();  // set up the next tick
+        }, randRange());
+    }
+
+</script>
 
 </body>
 </html>
