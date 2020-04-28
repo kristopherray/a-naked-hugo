@@ -92,35 +92,38 @@
 
 {{ partial "scripts.html" . }}
 
-<script>
-    function numberWithCommas(x) {
-        return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
-    }
+<!--<script>-->
 
-    function randRange() {
-        var timeArray = new Array(5,1,200, 500, 10, 400, 5, 1, 2, 250);
-        var newDelay = timeArray[Math.floor(timeArray.length * Math.random())];
-        console.log("New Delay: " + newDelay)
-        // The delays are too small, so multipling x10 or something.
-        return newDelay * 10;
-    }
-    var target;
-    var counter;
-    $(document).ready( function() {
-        //var delay = toggleSomething();
-        target = $('#counter');
-        counter = parseInt( target.text(), 10 );
-        console.log("Starting counter at: " + counter)
-        randomTick();
-    } );
-    function randomTick() {
-        setTimeout(() => {
-            target.text(numberWithCommas(counter++));
-            randomTick();  // set up the next tick
-        }, randRange());
-    }
+<!--    // Random Counting Up Ticker &#45;&#45; Just Add an Element with an ID-->
 
-</script>
+<!--    function numberWithCommas(x) {-->
+<!--        return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");-->
+<!--    }-->
+
+<!--    function randRange() {-->
+<!--        var timeArray = new Array(5,1,200, 500, 10, 400, 5, 1, 2, 250);-->
+<!--        var newDelay = timeArray[Math.floor(timeArray.length * Math.random())];-->
+<!--        console.log("New Delay: " + newDelay)-->
+<!--        // The delays are too small, so multipling x10 or something.-->
+<!--        return newDelay * 10;-->
+<!--    }-->
+<!--    var target;-->
+<!--    var counter;-->
+<!--    $(document).ready( function() {-->
+<!--        //var delay = toggleSomething();-->
+<!--        target = $('#counter');-->
+<!--        counter = parseInt( target.text(), 10 );-->
+<!--        console.log("Starting counter at: " + counter)-->
+<!--        randomTick();-->
+<!--    } );-->
+<!--    function randomTick() {-->
+<!--        setTimeout(() => {-->
+<!--            target.text(numberWithCommas(counter++));-->
+<!--            randomTick();  // set up the next tick-->
+<!--        }, randRange());-->
+<!--    }-->
+
+<!--</script>-->
 
 </body>
 </html>
