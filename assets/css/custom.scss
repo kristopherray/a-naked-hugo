@@ -1,0 +1,141 @@
+header {
+  padding:20px 15px;
+  position: relative;
+  z-index: 999;
+
+  #headerLogo {
+    display:inline-block;
+    width:170px;
+    padding:0 5px;
+    margin:0 20px 0 5px;
+
+    img {
+      width:100%;
+      height:auto;
+    }
+  }
+
+  nav {
+    position:relative;
+    margin:20px 0;
+    display:inline-block;
+
+    #toggle-menu {
+      display:none;
+      font-size:1.25em;
+      padding:0 10px;
+      color:#666;
+      -webkit-transition: all .3s;
+      -moz-transition: all .3s;
+      -ms-transition: all .3s;
+      -o-transition: all .3s;
+      transition: all .3s;
+      height:4rem;
+      line-height:4rem;
+
+      &:hover, &:focus {
+        background: $btn-color;
+        color:#fff;
+        text-decoration: none;
+        -webkit-border-radius: $button-radius;
+        -moz-border-radius: $button-radius;
+        border-radius: $button-radius;
+      }
+
+
+      @media(max-width:767px){
+        display:inline-block;
+      }
+
+    }
+
+    ul {
+      list-style:none;
+      padding:0;
+      margin:0;
+
+      @media(max-width:767px){
+        display:none;
+        position:absolute;
+        background:#f3f3f3;
+        width:100%;
+        z-index: 99;
+      }
+
+      li {
+        display:inline-block;
+        margin:5px;
+
+        &.social {
+          font-size:1.65em;
+          vertical-align: middle;
+          margin:2px;
+        }
+
+        a {
+          padding:5px;
+        }
+      }
+    }
+  }
+}
+
+#banner {
+  background:#f3f3f3;
+
+  h1,h2 {
+    font-size:4.20em;
+
+    @media(max-width:767px){
+      font-size:3.25em;
+    }
+  }
+
+}
+
+main {
+  padding: 4em 0;
+}
+
+#form {
+  background:#f3f3f3;
+
+  .container {
+    max-width:750px;
+  }
+}
+
+footer {
+  padding:3em 0 10em;
+
+  #footerSocial {
+    list-style:none;
+    padding:0;
+    margin:0;
+
+    li {
+      display:inline-block;
+      margin:5px;
+
+      &.social {
+        font-size:1.65em;
+        vertical-align: middle;
+        margin:2px;
+      }
+
+      a {
+        padding:5px;
+      }
+    }
+
+  }
+}
+
+#inquire {
+  background:#fff;
+  padding:5%;
+
+  .button {
+    margin-top:1em;
+  }
+}

@@ -10,14 +10,11 @@
         <a href="javascript:void(0)" id="toggle-menu"><i class="fa fa-bars"></i>&nbsp; Menu</a>
         <ul>
             {{ partial "menu.html" . }}
+            {{ partial "social.html" . }}
+            <li>
+                <a href="#" class="button">Button &rsaquo;</a>
+            </li>
         </ul>
     </nav>
-
-    <ul id="nav2">
-        {{ partial "social.html" . }}
-        <li>
-            <a href="#" class="button">Button &rsaquo;</a>
-        </li>
-    </ul>
 
 </header>
