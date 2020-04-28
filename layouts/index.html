@@ -91,6 +91,18 @@
 
 {{ partial "scripts.html" . }}
 
+<script>
+    if (window.netlifyIdentity) {
+        window.netlifyIdentity.on("init", user => {
+            if (!user) {
+                window.netlifyIdentity.on("login", () => {
+                    document.location.href = "/admin/";
+                });
+            }
+        });
+    }
+</script>
+
 <!--<script>-->
 
 <!--    // Random Counting Up Ticker &#45;&#45; Just Add an Element with an ID #counter -->
