@@ -5,6 +5,7 @@ disableKinds:
   - taxonomy
   - taxonomyTerm
 enableRobotsTXT: true
+paginate: 1
 params:
   description: >-
     Description

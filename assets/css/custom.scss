@@ -112,7 +112,15 @@ header {
 }
 
 main {
-  padding: 4em 0;
+  padding: 2em 0;
+
+  .entry {
+    padding:2em 20px;
+
+    .button {
+      margin-top: 1em;
+    }
+  }
 }
 
 #form {

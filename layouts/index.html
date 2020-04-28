@@ -14,7 +14,7 @@
 
             <h1>{{ .Title }}</h1>
 
-            <p>{{ .Content }}</p>
+            <p>{{ .Description }}</p>
 
             <a href="#inquire" class="button open-popup-link">Lightbox &rsaquo;</a>
 
@@ -31,21 +31,36 @@
         <div class="row flex-center">
 
             <div class="col-xs-12 col-sm-6 aos-item">
-                <img data-src="https://picsum.photos/600" class="lazyload img-responsive" alt="Make sure to use IMG ALT Tag">
+                <img data-src="https://picsum.photos/700" class="lazyload img-responsive" alt="Make sure to use IMG ALT Tag">
             </div>
 
             <div class="col-xs-12 col-sm-6 aos-item" data-aos="fade-in">
 
-                <h2>Another Cool Section Title</h2>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Expedita laborum natus pariatur veniam vitae. Delectus dicta dolor, doloremque, est facilis inventore laboriosam nostrum officiis praesentium qui recusandae, sunt suscipit tempora.</p>
-
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Expedita laborum natus pariatur veniam vitae. Delectus dicta dolor, doloremque, est facilis inventore laboriosam nostrum officiis praesentium qui recusandae, sunt suscipit tempora.</p>
+               {{ .Content }}
 
                 <a href="#inquire" class="open-popup-link button">Lightbox &rsaquo;</a>
             </div>
         </div>
     </div>
 </section>
+
+<main>
+    <div class="container">
+        <div class="row">
+            {{ range first 1 (where (.Site.RegularPages.ByParam "date") "Type" "news") }}
+            <div class="col-xs-12 col-sm-8 entry">
+                {{ if .Params.image }}
+                <img src='{{ .Param "image"}}' alt="Fighting For Icon">
+                {{end}}
+                <h2><a href="{{ .Permalink }}">{{ .Title }}</a></h2>
+                <span>{{ .Date.Format "January 2, 2006" }}</span>
+                <p>{{ .Description }}</p>
+                <a href="{{ .Permalink }}" class="button buttonOutline">Read More</a>
+            </div>
+            {{end}}
+        </div>
+    </div>
+</main>
 
 <section id="form">
     <div class="container">

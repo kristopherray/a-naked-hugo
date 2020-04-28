@@ -1,0 +1,29 @@
+backend:
+  name: git-gateway
+  repo: kristopherray/
+  branch: master
+# This line should *not* be indented
+media_folder: "static/img" # Media files will be stored in the repo under images/uploads
+public_folder: "/img"
+collections:
+  - name: "home"
+    label: "Home"
+    files:
+      - label: "Home"
+        name: "home"
+        file: "content/_index.md"
+        fields:
+          - {label: "Meta Title", name: "title", widget: "string"}
+          - {label: "Description and Banner Text", name: "description", widget: "text", required: false}
+          - {label: "Body", name: "body", widget: "markdown", required: false}
+  - name: "news"
+    label: "News"
+    folder: "content/news"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - {label: "Title", name: "title", widget: "string"}
+      - {label: "Slug", name: "slug", widget: "string"}
+      - {label: "Date", name: "date", widget: "datetime"}
+      - {label: "Description", name: "description", widget: "string", required: false}
+      - {label: "Body", name: "body", widget: "markdown", required: false}

@@ -8,7 +8,7 @@
     <div class="container">
 
         <div class="row">
-            <div class="col-xs-12">
+            <div class="col-xs-12 text-center">
 
                 <h2>{{ .Title }}</h2>
                 <p>{{ .Description }}</p>
@@ -30,17 +30,21 @@
 
         <div class="row">
 
-            {{ range .Pages }}
+            {{ range (.Paginator 1).Pages }}
 
-            <div class="col-xs-12">
+            <div class="col-xs-12 entry">
                 <h2><a href="{{ .Permalink }}">{{.Title}}</a></h2>
                 <span class="date">{{.Date.Format "January 2, 2006"}}</span>
                 <p>{{ .Description }}</p>
-                <a href="{{ .Permalink }}" class="text-link">Read More &rsaquo;</a>
+                <a href="{{ .Permalink }}" class="button buttonOutline">Read More &rsaquo;</a>
             </div>
 
             {{ end }}
 
+        </div>
+
+        <div class="row">
+            {{ partial "pagination.html" .}}
         </div>
     </div>
 
