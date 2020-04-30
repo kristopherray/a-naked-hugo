@@ -36,3 +36,26 @@ AOS.init({
     /* UTM Tracking */var queryForm=function(e){var t=!(!e||!e.reset)&&e.reset,n=window.location.toString().split("?");if(n.length>1){var o=n[1].split("&");for(s in o){var r=o[s].split("=");(t||null===sessionStorage.getItem(r[0]))&&sessionStorage.setItem(r[0],decodeURIComponent(r[1]))}}for(var i=document.querySelectorAll("input[type=hidden], input[type=text]"),s=0;s<i.length;s++){var a=sessionStorage.getItem(i[s].name);a&&(document.getElementsByName(i[s].name)[0].value=a)}};setTimeout(function(){queryForm()},3e3);
 </script>
 
+<script>
+    $(document).ready(function(){
+        /***phone number format***/
+        $("#phone").keypress(function (e) {
+            if (e.which != 8 && e.which != 0 && (e.which < 48 || e.which > 57)) {
+                return false;
+            }
+            var curchr = this.value.length;
+            var curval = $(this).val();
+            if (curchr == 3 && curval.indexOf("(") <= -1) {
+                $(this).val("(" + curval + ")" + "-");
+            } else if (curchr == 4 && curval.indexOf("(") > -1) {
+                $(this).val(curval + ")-");
+            } else if (curchr == 5 && curval.indexOf(")") > -1) {
+                $(this).val(curval + "-");
+            } else if (curchr == 9) {
+                $(this).val(curval + "-");
+                $(this).attr('maxlength', '14');
+            }
+        });
+    });
+</script>
+
