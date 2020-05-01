@@ -1,11 +1,12 @@
+/*The Foundation and Reset Based in Bootstrap */
 @import "bootstrap.scss"; /* Bootstrap V3.4.1 - Ya know, before Grid Came and Got Bloated */
 
+/* Optional Features */
 @import "aos.scss"; /* Section Animations */
-
 @import "animate.scss"; /* Basic Animations */
-
 @import "magnific-popup.scss"; /* LightBox */
 
+/* Naked Framework Requirements */
+@import "variables.scss";
 @import "default.scss";
-
 @import "custom.scss";
