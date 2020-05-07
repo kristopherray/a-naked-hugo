@@ -16,3 +16,7 @@ params:
   #google_analytics: UA-
   paid_for: Paid for by Language Goes Here
   form_endpoint: 123456
+markup:
+  goldmark:
+    parser:
+      autoHeadingID: false
