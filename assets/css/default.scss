@@ -156,6 +156,11 @@ p, li {
   border: 2px solid $btn-color;
   text-align: center;
 
+  @media(max-width:767px){
+    height: $line-height-mobile;
+    line-height: $line-height-mobile - 5px;
+  }
+
   &:hover, &:focus {
     text-decoration:none;
     outline: none;
