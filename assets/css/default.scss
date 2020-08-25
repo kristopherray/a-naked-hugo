@@ -252,7 +252,7 @@ form {
       }
     }
 
-    input, textarea {
+    input, textarea, select {
       border:none;
       padding:1.25rem .75rem .25rem .7rem;
       font-size:1.25rem;
@@ -268,7 +268,7 @@ form {
       -ms-transition: all .35s;
       -o-transition: all .35s;
       transition: all .35s;
-      border: 2px solid darken(#ccc,10%);
+      border: 2px solid;
 
       //@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
       //  line-height:2.2rem;
@@ -434,13 +434,14 @@ form {
   display:inline-block;
 }
 
-.mfp-close-btn-in .mfp-close {
-  color:#fff;
-}
-
 * {
   transition: filter .25s ease-in-out;
 }
 .mfp-wrap ~ * {
   filter: blur(10px);
+}
+
+.mfp-close {
+  top:0;
+  right:0;
 }

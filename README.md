@@ -7,7 +7,7 @@ Author: [KristopherRay.com](https://kristopherray.com)
 *built with [Hugo](https://gohugo.io)*
 
 **Required Dependancies:**
-- [ >= Hugo v0.69.0 - Extended](https://github.com/gohugoio/hugo/releases/tag/v0.69.0)
+- [ >= Hugo v0.70.0 - Extended](https://github.com/gohugoio/hugo/releases/tag/v0.70.0)
 
 **Optional Dependancies:**
 - [SASS (node-sass)](https://github.com/sass/node-sass)

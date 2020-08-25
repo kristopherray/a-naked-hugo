@@ -7,8 +7,6 @@ disableKinds:
 enableRobotsTXT: true
 paginate: 1
 params:
-  description: >-
-    Description
   twitter_user: kris_ray
   twitter_link: https://twitter.com/
   facebook_link: http://www.facebook.com/
