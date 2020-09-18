@@ -8,7 +8,7 @@
 
 .social-share {
   list-style: none;
-  margin:0;
+  margin:0 0 2rem;
   padding:0;
 
   li {
@@ -16,22 +16,22 @@
 
     &.facebook {
       .button {
-        background: $blue;
-        border-color: $blue;
+        background: $facebook-blue;
+        border-color: $facebook-blue;
       }
     }
 
     &.twitter {
       .button {
-        background:red;
-        border-color:red;
+        background: $twitter-blue;
+        border-color: $twitter-blue;
       }
     }
   }
 }
 
 header {
-  padding:20px 15px;
+  padding:1rem;
   position: relative;
   z-index: 999;
   display:flex;
@@ -42,7 +42,7 @@ header {
     display:inline-block;
     width:170px;
     padding:0 5px;
-    margin:0 20px 0 0;
+    margin:0 1rem 0 0;
 
     img {
       width:100%;
@@ -52,7 +52,7 @@ header {
 
   nav {
     position:relative;
-    margin:20px 0;
+    margin:1rem 0;
     display:inline-block;
 
     #toggle-menu {
@@ -105,7 +105,7 @@ header {
         @media(max-width:767px){
           width:100%;
           margin:0;
-          padding:5px;
+          padding:0;
         }
 
         &.social {
@@ -115,12 +115,23 @@ header {
 
           @media(max-width:767px){
             width:auto;
+            margin:0;
           }
 
         }
 
         a {
           padding:5px;
+
+          @media(max-width:767px){
+            display:block;
+            padding:10px;
+
+            &:hover, &:focus {
+              background: darken(#f3f3f3,10%);
+            }
+
+          }
 
           &.button {
             @media(max-width:767px){
@@ -180,12 +191,12 @@ form {
 }
 
 #signup {
-  padding:2em 0;
+  padding:2rem 0;
   background:darken($default,5%);
 }
 
 main {
-  padding: 2em 0;
+  padding: 2rem 0;
 }
 
 #form {
@@ -193,7 +204,7 @@ main {
 }
 
 footer {
-  padding:3em 0 10em;
+  padding:3rem 0 10rem;
 
   #footerSocial {
     list-style:none;
@@ -234,6 +245,6 @@ footer {
   padding:5%;
 
   .button {
-    margin-top:1em;
+    margin-top:1rem;
   }
 }
