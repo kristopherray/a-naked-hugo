@@ -10,7 +10,7 @@
 
     <div class="row">
 
-        <div class="col-xs-12 text-center animated fadeInDown delay-1">
+        <div class="col text-center animated fadeInDown delay-1">
 
             <h1>{{ .Title }}</h1>
 
@@ -27,24 +27,22 @@
 </section>
 
 <section id="signup">
-    <div class="container-fluid">
-        <div class="row">
+    <div class="container-sm">
 
-                {{ partial "signup.html" .}}
+        {{ partial "signup.html" .}}
 
-        </div>
     </div>
 </section>
 
 <section>
     <div class="container">
-        <div class="row flex-center">
+        <div class="row align-items-center">
 
-            <div class="col-xs-12 col-sm-6 aos-item">
-                <img data-src="https://picsum.photos/700" class="lazyload img-responsive" alt="Make sure to use IMG ALT Tag">
+            <div class="col-12 col-sm-6 aos-item">
+                <img data-src="https://picsum.photos/700" class="lazyload img-fluid" alt="Make sure to use IMG ALT Tag">
             </div>
 
-            <div class="col-xs-12 col-sm-6 aos-item" data-aos="fade-in">
+            <div class="col aos-item" data-aos="fade-in">
 
                {{ .Content }}
 
@@ -55,30 +53,30 @@
 </section>
 
 <main>
-    <div class="container">
-        <div class="row">
-            {{ range first 1 (where (.Site.RegularPages.ByParam "date") "Type" "news") }}
-            <div class="col-xs-12 col-sm-8 entry">
-                {{ if .Params.image }}
-                <img src='{{ .Param "image"}}' alt="Fighting For Icon">
+    <section>
+        <div class="container">
+            <div class="row">
+                {{ range first 1 (where (.Site.RegularPages.ByParam "date") "Type" "news") }}
+                <div class="col col-sm-10 col-md-8 entry">
+                    {{ if .Params.image }}
+                    <img src='{{ .Param "image"}}' alt="Fighting For Icon">
+                    {{end}}
+                    <h2><a href="{{ .Permalink }}">{{ .Title }}</a></h2>
+                    <span>{{ .Date.Format "January 2, 2006" }}</span>
+                    <p>{{ .Description }}</p>
+                    <a href="{{ .Permalink }}" class="button buttonOutline">Read More</a>
+                </div>
                 {{end}}
-                <h2><a href="{{ .Permalink }}">{{ .Title }}</a></h2>
-                <span>{{ .Date.Format "January 2, 2006" }}</span>
-                <p>{{ .Description }}</p>
-                <a href="{{ .Permalink }}" class="button buttonOutline">Read More</a>
             </div>
-            {{end}}
         </div>
-    </div>
+    </section>
 </main>
 
 <section id="form">
     <div class="container">
-        <div class="row">
 
-            {{ partial "form.html" .}}
+        {{ partial "form.html" .}}
 
-        </div>
     </div>
 </section>
 
@@ -87,7 +85,7 @@
     <div class="container">
 
         <div class="row">
-            <div class="col-xs-12 text-center">
+            <div class="col text-center">
                 <h2>Inquire Now</h2>
                 <p>Please don't leave yet, fill out the form below...</p>
                 <a href="#" class="button">Button &rsaquo;</a>

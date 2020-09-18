@@ -354,14 +354,13 @@ img.mfp-img {
 /* overlay at start */
 .mfp-fade.mfp-bg {
   opacity: 0;
-
-  -webkit-transition: all 0.15s ease-out;
-  -moz-transition: all 0.15s ease-out;
-  transition: all 0.15s ease-out;
+  -webkit-transition: all 0.15s;
+  -moz-transition: all 0.15s;
+  transition: all 0.15s;
 }
 /* overlay animate in */
 .mfp-fade.mfp-bg.mfp-ready {
-  opacity: 0.8;
+  opacity: 0.97;
 }
 /* overlay animate out */
 .mfp-fade.mfp-bg.mfp-removing {
@@ -371,10 +370,9 @@ img.mfp-img {
 /* content at start */
 .mfp-fade.mfp-wrap .mfp-content {
   opacity: 0;
-
-  -webkit-transition: all 0.15s ease-out;
-  -moz-transition: all 0.15s ease-out;
-  transition: all 0.15s ease-out;
+  -webkit-transition: all 0.15s;
+  -moz-transition: all 0.15s;
+  transition: all 0.15s;
 }
 /* content animate it */
 .mfp-fade.mfp-wrap.mfp-ready .mfp-content {

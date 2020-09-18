@@ -1,13 +1,24 @@
+.button {
+  &:hover, &:focus {
+    border-color: $blue;
+    background: $blue;
+    color:#fff;
+  }
+}
+
 header {
   padding:20px 15px;
   position: relative;
   z-index: 999;
+  display:flex;
+  align-items: center;
+  justify-content: space-between;
 
   #headerLogo {
     display:inline-block;
     width:170px;
     padding:0 5px;
-    margin:0 20px 0 5px;
+    margin:0 20px 0 0;
 
     img {
       width:100%;
@@ -60,6 +71,7 @@ header {
         background:#f3f3f3;
         width:200px;
         z-index: 99;
+        right:0;
       }
 
       li {
@@ -68,6 +80,8 @@ header {
 
         @media(max-width:767px){
           width:100%;
+          margin:0;
+          padding:5px;
         }
 
         &.social {
@@ -99,7 +113,13 @@ header {
 }
 
 #banner {
-  background:#f3f3f3;
+  background:#000;
+  color:#fff;
+  font-size:20px;
+
+  @media(max-width: 767px){
+    font-size:15px;
+  }
 
   h1,h2 {
     font-size:4.20em;
@@ -109,43 +129,43 @@ header {
     }
   }
 
+  p {
+    font-size:1.25em;
+  }
+
 }
 
 form {
-  .col-xs-12, col-xs-11, .col-xs-10, .col-xs-9, .col-xs-8, .col-xs-7, .col-xs-6, .col-xs-5, .col-xs-4, .col-xs-3, .col-xs-2, .col-xs-1 {
+  .col {
     input, textarea, select {
       border-color:#fff;
 
       &:hover, &:focus {
-        border-color:red;
+        border-color:$blue;
       }
     }
+
+    .button {
+      margin-top: 0 !important;
+      background: $teal;
+      border-color: $teal;
+      color:#000;
+    }
   }
+
 }
 
 #signup {
-  padding:2em;
-  background:#000;
+  padding:2em 0;
+  background:darken($default,5%);
 }
 
 main {
   padding: 2em 0;
-
-  .entry {
-    padding:2em 20px;
-
-    .button {
-      margin-top: 1em;
-    }
-  }
 }
 
 #form {
   background:#f3f3f3;
-
-  .container {
-    max-width:750px;
-  }
 }
 
 footer {
@@ -173,6 +193,17 @@ footer {
 
   }
 }
+
+.mfp-bg {
+  background: $default;
+}
+
+//* {
+//  transition: filter .25s;
+//}
+//.mfp-wrap ~ * {
+//  filter: blur(10px);
+//}
 
 #inquire {
   background:#fff;

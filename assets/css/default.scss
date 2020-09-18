@@ -11,7 +11,7 @@
   width:100%;
 }
 
-/* Custom / Bootstrap 3.3.7 Layout Overrides */
+/* Custom Layout Overrides */
 html, body {
   overflow-x: hidden;
   font-size:$base-fontsize;
@@ -20,20 +20,20 @@ html, body {
 }
 
 section {
-  padding: 2em 0;
+  padding: 2rem 0;
   font-size: $base-fontsize;
   position:relative;
 
   @media(min-width:768px){
-    padding:3em 0;
+    padding:3rem 0;
   }
 
   @media(min-width:992px){
-    padding:5em 0;
+    padding:5rem 0;
   }
 
   @media(min-width:1200px){
-    padding:8em 0;
+    padding:8rem 0;
   }
 
   .container {
@@ -41,7 +41,7 @@ section {
     .row {
 
       .button {
-        margin-top:1em;
+        margin-top:1rem;
       }
 
       form {
@@ -60,29 +60,6 @@ section {
   width:100%;
   max-width:$max-width;
   margin:0 auto;
-
-  .row {
-    padding: 0 5%;
-  }
-}
-
-.flex-center {
-  display: flex;
-  align-items: center;
-
-  @media(max-width:767px){
-    display:block;
-  }
-}
-
-.flex-stretch {
-  display:flex;
-  align-items: stretch;
-
-  @media(max-width:767px){
-    display:block;
-  }
-
 }
 
 /* Font Styles */
@@ -196,9 +173,13 @@ p, li {
 }
 
 form {
+  @extend .row;
   font-size:$base-fontsize;
+  flex-wrap: wrap;
+  margin-left:-10px;
+  margin-right:-10px;
 
-  .col-xs-12, col-xs-11, .col-xs-10, .col-xs-9, .col-xs-8, .col-xs-7, .col-xs-6, .col-xs-5, .col-xs-4, .col-xs-3, .col-xs-2, .col-xs-1 {
+  .col{
     position:relative;
     $input-padding-top: .5rem;
     $input-padding-right: .5rem;
@@ -401,6 +382,13 @@ form {
   }
 
 }
+
+main {
+  .button {
+    margin-top:1rem;
+  }
+}
+
 #paginationWrapper {
   display:flex;
   align-items: center;
@@ -432,13 +420,6 @@ form {
   padding:7px 10px;
   border:.5px solid #666;
   display:inline-block;
-}
-
-* {
-  transition: filter .25s ease-in-out;
-}
-.mfp-wrap ~ * {
-  filter: blur(10px);
 }
 
 .mfp-close {

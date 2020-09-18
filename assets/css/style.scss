@@ -1,5 +1,7 @@
 /*The Foundation and Reset Based in Bootstrap */
-@import "bootstrap.scss"; /* Bootstrap V3.4.1 - Ya know, before Grid Came and Got Bloated */
+@import "bootstrap/bootstrap-reboot.scss";
+@import "bootstrap/bootstrap.scss";
+@import "bootstrap/bootstrap-grid.scss";
 
 /* Optional Features */
 @import "aos.scss"; /* Section Animations */

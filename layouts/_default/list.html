@@ -8,7 +8,7 @@
     <div class="container">
 
         <div class="row">
-            <div class="col-xs-12 text-center">
+            <div class="col text-center">
 
                 <h2>{{ .Title }}</h2>
                 <p>{{ .Description }}</p>
@@ -20,10 +20,11 @@
 </section>
 
 <main>
+
     <div class="container">
 
         <div class="row">
-            <div class="col-xs-12">
+            <div class="col">
                 {{ .Content }}
             </div>
         </div>
@@ -32,7 +33,7 @@
 
             {{ range (.Paginator 1).Pages }}
 
-            <div class="col-xs-12 entry">
+            <div class="col entry">
                 <h2><a href="{{ .Permalink }}">{{.Title}}</a></h2>
                 <span class="date">{{.Date.Format "January 2, 2006"}}</span>
                 <p>{{ .Description }}</p>
