@@ -1,6 +1,4 @@
-<li>
-    <a href='{{ "/" | relURL }}'>Home</a>
-</li>
-<li>
-    <a href='{{ "news" | relURL }}'>News</a>
-</li>
+{{ $currentPage := . }}
+{{ range .Site.Menus.main }}
+<li class='menu-item{{if or ($currentPage.IsMenuCurrent "main" .) ($currentPage.HasMenuCurrent "main" .) }} current-menu-item{{end}}'> <a title="{{ .Name }}" href="{{ .URL }}">{{ .Name }}</a> </li>
+{{ end }} 

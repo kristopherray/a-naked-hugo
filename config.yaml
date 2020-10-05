@@ -18,3 +18,12 @@ markup:
   goldmark:
     parser:
       autoHeadingID: false
+
+menu:
+  main:
+    - name: Home
+      url: /
+      weight: -20
+    - name: News
+      url: /news/
+      weight: -10
