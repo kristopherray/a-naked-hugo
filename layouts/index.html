@@ -23,7 +23,10 @@
     </div>
 
 </div>
-
+    <video playsinline autoplay muted loop poster='{{"video/bg.jpg" | relURL }}' data-src='{{"video/bg-small.mp4" | relURL }}' id="bgvid" class="lazy">
+        <source data-src='{{"video/bg-small.webm" | relURL }}' type="video/webm">
+        <source data-src='{{"video/bg-small.mp4" | relURL }}' type="video/mp4">
+    </video>
 </section>
 
 <section id="signup">
@@ -38,8 +41,8 @@
     <div class="container">
         <div class="row align-items-center">
 
-            <div class="col-12 col-sm-6 aos-item">
-                <img data-src="https://picsum.photos/700" class="lazyload img-fluid" alt="Make sure to use IMG ALT Tag">
+            <div class="col-12 col-sm-6 aos-item" data-aos="fade-in">
+                <img src="https://picsum.photos/700" class="lazyload img-fluid" alt="Make sure to use IMG ALT Tag">
             </div>
 
             <div class="col aos-item" data-aos="fade-in">
@@ -57,7 +60,7 @@
         <div class="container">
             <div class="row">
                 {{ range first 1 (where (.Site.RegularPages.ByParam "date") "Type" "news") }}
-                <div class="col col-sm-10 col-md-8 entry">
+                <div class="col col-sm-10 col-md-8 entry aos-item" data-aos="fade-in">
                     {{ if .Params.image }}
                     <img src='{{ .Param "image"}}' alt="Fighting For Icon">
                     {{end}}
