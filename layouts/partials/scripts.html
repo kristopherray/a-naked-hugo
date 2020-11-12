@@ -1,59 +1,16 @@
-<script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+<script type="deferjs" src="//ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
 {{ $js := resources.Get "js/plugins.js" }}
 {{ $secureJS := $js | resources.Minify }}
-<script type="text/javascript" src="{{ $secureJS.Permalink }}"></script>
+<script type="deferjs" src="{{ $secureJS.Permalink }}"></script>
 
-<script>
-/* Form Focus */
-$('.labelToggle input, .labelToggle textarea, .labelToggle select').on("focus change keyup blur input", function() {
-    $(this).parent().addClass("toggle-label");
-    }
-);
-/* AOS */
-AOS.init({
-    easing: 'ease-out-cubic',
-    duration: 1500,
-    mirror: false,
-    once: true
-});
-</script>
+<script>deferimg('img[data-src],picture,video,audio')</script>
 
-<script>
-    $('.open-popup-link').magnificPopup({
-        type:'inline',
-        midClick: true, // Allow opening popup on middle mouse click. Always set it to true if you don't provide alternative source in href.
-        // Delay in milliseconds before popup is removed
-        removalDelay: 300,
-
-        // Class that is added to popup wrapper and background
-        // make it unique to apply your CSS animations just to this exact popup
-        mainClass: 'mfp-fade'
-    });
-</script>
-
-<script>
-    /* UTM Tracking */var queryForm=function(e){var t=!(!e||!e.reset)&&e.reset,n=window.location.toString().split("?");if(n.length>1){var o=n[1].split("&");for(s in o){var r=o[s].split("=");(t||null===sessionStorage.getItem(r[0]))&&sessionStorage.setItem(r[0],decodeURIComponent(r[1]))}}for(var i=document.querySelectorAll("input[type=hidden], input[type=text]"),s=0;s<i.length;s++){var a=sessionStorage.getItem(i[s].name);a&&(document.getElementsByName(i[s].name)[0].value=a)}};setTimeout(function(){queryForm()},3e3);
-</script>
-
-<script>
-    $(document).ready(function(){
-        /***phone number format***/
-        $(".phone").keypress(function (e) {
-            if (e.which != 8 && e.which != 0 && (e.which < 48 || e.which > 57)) {
-                return false;
-            }
-            var curchr = this.value.length;
-            var curval = $(this).val();
-            if (curchr == 3 && curval.indexOf("(") <= -1) {
-                $(this).val("(" + curval + ")" + "-");
-            } else if (curchr == 4 && curval.indexOf("(") > -1) {
-                $(this).val(curval + ")-");
-            } else if (curchr == 5 && curval.indexOf(")") > -1) {
-                $(this).val(curval + "-");
-            } else if (curchr == 9) {
-                $(this).val(curval + "-");
-                $(this).attr('maxlength', '14');
-            }
-        });
-    });
-</script>
+<!--<script type="text/javascript">-->
+<!--    // This will defer showing an alert message after 2 seconds-->
+<!--    defer(function() {-->
+<!--        $(window).load(function() { // makes sure the whole site is loaded-->
+<!--            $("#status").fadeOut(); // will first fade out the loading animation-->
+<!--            $("#preloader").delay(350).fadeOut("slow"); // will fade out the white DIV that covers the website.-->
+<!--        });-->
+<!--    }, 2000);-->
+<!--</script>-->

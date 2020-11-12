@@ -33,7 +33,17 @@
     <meta name="twitter:creator" content="@{{ .Site.Params.twitter_user }}" />
     {{ end }}
 
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
+    {{ partial "deferjs.html" .}}
+
+    <script type="text/javascript">
+        // This will lzay-load FontAwesome icons
+        deferstyle('//use.fontawesome.com/releases/v5.8.2/css/all.css', 'fontawesome-css', 1000);
+    </script>
+
+    <script type="text/javascript">
+        // This will lzay-load FontAwesome icons
+        deferstyle('//use.typekit.net/fej5sdm.css', 'typekit-css', 1000);
+    </script>
 
     {{ $sass := resources.Get "css/style.scss" }}
     {{ $style := $sass | resources.ToCSS | minify }}
@@ -42,17 +52,18 @@
             href="{{ $style.Permalink }}"
             media="screen">
 
-    {{ if isset .Site.Params "google_analytics" }}
+
     <!-- Global site tag (gtag.js) - Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id={{ .Site.Params.google_analytics }}"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-        gtag('js', new Date());
-        gtag('config', '{{ .Site.Params.google_analytics }}');
+    {{ if isset .Site.Params "google_analytics" }}
+    <script type="text/javascript">
+        // Alternative way to lazy load Google Tag Manager script
+        deferscript('//www.googletagmanager.com/gtag/js?id={{ .Site.Params.google_analytics }}', 'google-tag', 500, function() {
+            // Run extra code right after the script has been loaded
+            (window.dataLayer = window.dataLayer || []).push('config', '{{ .Site.Params.google_analytics }}');
+        });
     </script>
     {{ end }}
 
-<!--<script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>-->
+    <script type="deferjs" src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
 
 </head>
