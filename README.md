@@ -12,7 +12,7 @@ This "template" (I hate that word) follows best-practices and preferences for my
 **Deployment Ready for Netlify**
 
 **Required Local Dependancies:**
-- [ >= Hugo v0.74.3 - Extended](https://github.com/gohugoio/hugo/releases/tag/v0.74.3)
+- [ >= Hugo v0.87.0 - Extended](https://github.com/gohugoio/hugo/releases/tag/v0.74.3)
 
 **Optional Dependancies:**
 - [SASS (node-sass)](https://github.com/sass/node-sass)
