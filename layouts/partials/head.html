@@ -60,18 +60,6 @@
             href="{{ $style.Permalink }}"
             media="screen">
 
-
-    <!-- Global site tag (gtag.js) - Google Analytics -->
-    {{ if isset .Site.Params "google_analytics" }}
-    <script type="text/javascript">
-        // Alternative way to lazy load Google Tag Manager script
-        deferscript('//www.googletagmanager.com/gtag/js?id={{ .Site.Params.google_analytics }}', 'google-tag', 500, function() {
-            // Run extra code right after the script has been loaded
-            (window.dataLayer = window.dataLayer || []).push('config', '{{ .Site.Params.google_analytics }}');
-        });
-    </script>
-    {{ end }}
-
     <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
 
 </head>

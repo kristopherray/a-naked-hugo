@@ -18,6 +18,8 @@ markup:
   goldmark:
     parser:
       autoHeadingID: false
+    renderer:
+      unsafe: true
 
 menu:
   main:

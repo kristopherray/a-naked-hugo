@@ -1,3 +1,15 @@
+a {
+  text-decoration: none;
+}
+
+section {
+  position:relative;
+  .container {
+    z-index:5;
+    position:relative;
+  }
+}
+
 .button {
   &:hover, &:focus {
     border-color: $blue;
@@ -43,6 +55,10 @@ header {
     width:170px;
     padding:0 5px;
     margin:0 1rem 0 0;
+
+    @media(max-width:575px){
+      width:125px;
+    }
 
     img {
       width:100%;
@@ -180,63 +196,6 @@ header {
     font-size:1.25em;
   }
 
-  /*nuemorphism button*/
-  //.button {
-  //  position:relative;
-  //  -webkit-box-shadow: 4px 4px 15px rgba(0,0,0,.35);
-  //  -moz-box-shadow: 4px 4px 15px rgba(0,0,0,.35);
-  //  box-shadow: 4px 4px 15px rgba(0,0,0,.35);
-  //  background: linear-gradient(180deg, darken($default,1%) 0%, $default 100%);
-  //  border-width: 0;
-  //  -webkit-border-radius: 60px;
-  //  -moz-border-radius:60px;
-  //  border-radius: 60px;
-  //  color: darken($default, 5%);
-  //  text-shadow: 1px 1px 0px rgba(255,255,255,.1);
-  //  font-size:1.5em;
-  //  text-transform: uppercase;
-  //  height: 5rem;
-  //  line-height: 5rem;
-  //  padding:0 2rem;
-  //
-  //  &:before {
-  //    content:'';
-  //    pointer-events: none;
-  //    display:block;
-  //    position:absolute;
-  //    -webkit-box-shadow: -2px -2px 15px rgba(255,255,255,.0875);
-  //    -moz-box-shadow: -2px -2px 15px rgba(255,255,255,.0875);
-  //    box-shadow: -2px -2px 15px rgba(255,255,255,.0875);
-  //    left:0;
-  //    top:0;
-  //    width:100%;
-  //    height:100%;
-  //    -webkit-border-radius: 60px;
-  //    -moz-border-radius: 60px;
-  //    border-radius: 60px;
-  //    -webkit-transition: all .2s;
-  //    -moz-transition: all .2s;
-  //    -ms-transition: all .2s;
-  //    -o-transition: all .2s;
-  //    transition: all .2s;
-  //  }
-  //
-  //  &:hover,&:focus {
-  //    transform: scale(1,1);
-  //    background: lighten($default,2%);
-  //    color:lighten($default,40%);
-  //    text-shadow: 0px 0px 1px rgba(255,255,255,1);
-  //    -webkit-box-shadow: inset 2px 2px 15px rgba(0,0,0,.4);
-  //    -moz-box-shadow: inset 2px 2px 15px rgba(0,0,0,.4);
-  //    box-shadow: inset 2px 2px 15px rgba(0,0,0,.4);
-  //
-  //    &:before {
-  //      -webkit-box-shadow: inset 0px -1px 10px rgba(255,255,255,.0575);
-  //      -moz-box-shadow: inset 0px -1px 10px rgba(255,255,255,.0575);
-  //      box-shadow: inset 0px -1px 10px rgba(255,255,255,.0575);
-  //    }
-  //  }
-  //}
 
 }
 
@@ -252,9 +211,6 @@ form {
 
     .button {
       margin-top: 0 !important;
-      background: $teal;
-      border-color: $teal;
-      color:#000;
     }
   }
 
@@ -265,12 +221,13 @@ form {
   background:darken($default,5%);
 }
 
-main {
-  padding: 2rem 0;
-}
 
 #form {
   background:#f3f3f3;
+
+  .container {
+    max-width:1000px;
+  }
 }
 
 footer {
@@ -316,5 +273,90 @@ footer {
 
   .button {
     margin-top:1rem;
+  }
+}
+
+#home {
+  #section-1 {
+    color:#fff;
+    background: #000;
+
+    @media(max-width:767px){
+      padding-top:0;
+    }
+    .bg-image {
+      width:60%;
+      height:100%;
+      top:0;
+      left:0;
+    
+      &:before {
+        background: linear-gradient(270deg, #000 0%, rgba(0, 0, 0, 0) 40%);
+      }
+    
+      @media(max-width:767px){
+        height:350px;
+        width:100%;
+    
+        &:before{
+          background: linear-gradient(360deg, #000 0%, rgba(0, 0, 0, 0) 15%);
+        }
+      }
+    }
+  }
+
+  #section-2 {
+    color:#333;
+    background: #f3f3f3;
+
+    @media(max-width:575px){
+      padding-top:0;
+    }
+
+    .bg-image {
+      width:60%;
+      height:100%;
+      top:0;
+      left:50%;
+      position:absolute;
+    
+      &:before {
+        background: none;
+      }
+    
+      @media(max-width:575px){
+        height:350px;
+        width:100%;
+        position:relative;
+        left:0;
+        margin-bottom:20px;
+    
+        &:before{
+          background: none;;
+        }
+      }
+    }
+  }
+
+  #news {
+    background: #ccc;
+    .entry {
+      background:#fff;
+      padding:0;
+      box-shadow: 0px 2px 10px rgba(0,0,0,.15);
+
+      .content {
+        padding:40px;
+      }
+    }
+  }
+
+  .standard-home {
+    padding:20px 0;
+    img {
+      @media(max-width:575px){
+        margin-bottom:20px;
+      }
+    }
   }
 }

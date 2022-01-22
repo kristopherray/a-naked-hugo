@@ -114,6 +114,35 @@ Copyright (c) 2015 Daniel Eden
   animation-name: fadeIn;
 }
 
+@-webkit-keyframes fadeInScale {
+  0% {
+    opacity: 0;
+    transform: scale(.875,.875)
+  }
+
+  100% {
+    opacity: 1;
+    transform: scale(1,1)
+  }
+}
+
+@keyframes fadeInScale {
+  0% {
+    opacity: 0;
+    transform: scale(.875,.875)
+  }
+
+  100% {
+    opacity: 1;
+    transform: scale(1,1)
+  }
+}
+
+.fadeInScale {
+  -webkit-animation-name: fadeInScale;
+  animation-name: fadeInScale;
+}
+
 @-webkit-keyframes fadeInDown {
   0% {
     opacity: 0;

@@ -4,9 +4,14 @@
     <input type="hidden" name="utm_medium" value="">
     <input type="hidden" name="utm_campaign" value="">
 
-    <div class="col col-12 col-sm-6 labelToggle">
-        <label for="full_name">Your Name*</label>
-        <input type="text" id="full_name" class="formField" name="full_name" placeholder="ex. John Doe" required>
+    <div class="col col-12 col-sm-3 labelToggle">
+        <label for="first_name">First Name*</label>
+        <input type="text" id="first_name" class="formField" name="first_name" placeholder="ex. John or Jane" required>
+    </div>
+
+    <div class="col col-12 col-sm-3 labelToggle">
+        <label for="last_name">Last Name*</label>
+        <input type="text" id="last_name" class="formField" name="last_name" placeholder="ex. Doe" required>
     </div>
 
     <div class="col col-12 col-sm-6 labelToggle">
@@ -14,17 +19,14 @@
         <input type="email" id="email" name="email" placeholder="ex. yourname@email.com" required class="formField labelToggle">
     </div>
 
-    <div class="col col-12 col-sm-4 labelToggle">
+    <div class="col col-12 col-sm-3 labelToggle">
         <label for="phone">Phone Number*</label>
         <input type="tel" id="phone" class="phone" name="phone" placeholder="(123) 456-7890" required class="formField labelToggle">
     </div>
 
-    <div class="col col-12 col-sm-5 labelToggle">
+    <div class="col col-12 col-sm-4 labelToggle">
         <label for="city">City*</label>
-        <select name="city" id="city">
-            <option value=""></option>
-            <option value="austin">Austin</option>
-        </select>
+        <input type="text" id="city" name="city" placeholder="ex. Austin" required class="formField labelToggle">
     </div>
 
     <div class="col col-12 col-sm-2 labelToggle">
