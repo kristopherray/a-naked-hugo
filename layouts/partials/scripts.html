@@ -4,5 +4,6 @@
 <script type="deferjs" src="{{ $secureJS.Permalink }}"></script>
 
 <script>
-    Defer.dom('.lazy', 200, 'loaded');
+    deferimg('img[data-src],picture,video,audio')
+    Defer.dom('img.lazy', 200, 'loaded');
 </script>
