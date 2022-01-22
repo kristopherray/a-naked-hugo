@@ -3,4 +3,6 @@
 {{ $secureJS := $js | resources.Minify }}
 <script type="deferjs" src="{{ $secureJS.Permalink }}"></script>
 
-<script>deferimg('img[data-src],picture,video,audio')</script>
+<script>
+    deferimg('img[data-src],picture,video,audio')
+</script>

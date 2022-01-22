@@ -45,7 +45,7 @@
 
             {{ if .Params.image }}
             <div class="bg-image aos-item" data-aos="fade-in">
-                <img src='{{ .Params.image }}' class="lazyload img-fluid" alt="{{ .Site.Title }} - {{ .Title }} Image">
+                <img src='{{ .Params.image }}' class="lazy img-fluid" alt="{{ .Site.Title }} - {{ .Title }} Image">
             </div>
             {{end}}
 
@@ -66,7 +66,7 @@
                 <div class="entry col-12 aos-item" data-aos="fade-in">
                     <div class="d-flex justify-content-center align-items-center">
                         {{ if .Params.image }}
-                            <div class="col col-sm-4"><a href="{{ .Permalink }}"><img src='{{ .Param "image"}}' class="img-fluid lazyload" alt="{{ .Title }}"></a></div>
+                            <div class="col col-sm-4"><a href="{{ .Permalink }}"><img src='{{ .Param "image"}}' class="img-fluid lazy" alt="{{ .Title }}"></a></div>
                         {{end}}
                         <div class="content col col-sm-8">
                             <h2><a href="{{ .Permalink }}">{{ .Title }}</a></h2>
