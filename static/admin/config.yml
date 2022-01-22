@@ -15,7 +15,7 @@ collections:
         fields:
           - {label: "Meta Title / Banner Title", name: "title", widget: "string"}
           - {label: "Description and Banner Text", name: "description", widget: "text", required: false}
-          - {label: "Standard Section", name: "body", widget: "markdown", required: false}
+          - {label: "Lightbox Content", name: "body", widget: "markdown", required: false}
   - name: "news"
     label: "News"
     folder: "content/news"

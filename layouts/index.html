@@ -81,23 +81,6 @@
         </div>
     </section>
 
-    <section class="standard-home">
-        <div class="container">
-            <div class="row align-items-center">
-    
-                <div class="col-12 col-sm-6 aos-item" data-aos="fade-in">
-                    <img src="https://picsum.photos/700" class="lazyload img-fluid" alt="Make sure to use IMG ALT Tag">
-                </div>
-    
-                <div class="col aos-item" data-aos="fade-in">
-    
-                   {{ .Content }}
-
-                </div>
-            </div>
-        </div>
-    </section>
-
 </main>
 
 <section id="form">
@@ -114,9 +97,7 @@
 
         <div class="row">
             <div class="col text-center">
-                <h2>Inquire Now</h2>
-                <p>Please don't leave yet, fill out the form below...</p>
-                <a href="#" class="button">Button &rsaquo;</a>
+                {{ .Content }}
             </div>
         </div>
     </div>

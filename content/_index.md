@@ -8,6 +8,6 @@ sitemap:
 
 ## Single Home Section
 
-Lorem ipsum dolor sit amet, consectetur adipisicing elit. Expedita laborum natus pariatur veniam vitae. Delectus dicta dolor, doloremque, est facilis inventore laboriosam nostrum officiis praesentium qui recusandae, sunt suscipit tempora.
+**Lorem ipsum dolor sit amet**, consectetur adipisicing elit.
 
-<a href="#inquire" class="open-popup-link button">Lightbox &rsaquo;</a>
+{{< youtube dQw4w9WgXcQ >}}
