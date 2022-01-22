@@ -16,6 +16,16 @@ collections:
           - {label: "Meta Title / Banner Title", name: "title", widget: "string"}
           - {label: "Description and Banner Text", name: "description", widget: "text", required: false}
           - {label: "Lightbox Content", name: "body", widget: "markdown", required: false}
+  - name: "home_sections"
+    label: "Home Sections"
+    folder: "content/home_sections"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - {label: "Reference Title (hidden)", name: "title", widget: "string"}
+      - {label: "Section Content", name: "body", widget: "markdown"}
+      - {label: "Background Image", name: "image", widget: "image" }
+      - {label: "Order", name: "weight", widget: "number" }
   - name: "news"
     label: "News"
     folder: "content/news"
@@ -28,14 +38,4 @@ collections:
       - {label: "Description", name: "description", widget: "string", required: false}
       - {label: "Body", name: "body", widget: "markdown", required: false}
       - {label: "Featured Image", name: "image", widget: "image" }
-      - {label: "Order", name: "weight", widget: "number" }
-  - name: "home_sections"
-    label: "Home Sections"
-    folder: "content/home_sections"
-    create: true
-    slug: "{{slug}}"
-    fields:
-      - {label: "Reference Title (hidden)", name: "title", widget: "string"}
-      - {label: "Section Content", name: "body", widget: "markdown"}
-      - {label: "Background Image", name: "image", widget: "image" }
       - {label: "Order", name: "weight", widget: "number" }
