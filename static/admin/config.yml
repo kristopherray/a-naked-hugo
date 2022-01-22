@@ -9,7 +9,7 @@ collections:
   - name: "home"
     label: "Home"
     files:
-      - label: "Home"
+      - label: "Home Content and Settings"
         name: "home"
         file: "content/_index.md"
         fields:
