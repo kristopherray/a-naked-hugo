@@ -1,6 +1,8 @@
 # A Naked Hugo Template
 *built with [Hugo](https://gohugo.io)* by - [KristopherRay.com](https://kristopherray.com)  
 
+### You can see an demo running [here](https://anakedhugo.netlify.app/)
+
 This "template" *(I hate that word)* follows best-practices and preferences for my Hugo / Netlify workflow. It is a clean and lean foundation for all my new projects that leverages the familiar Bootstrap 5.1.3 grid framework and some misc. helpers, but stripped of the features I never use. Everything else is "naked" and ready for a custom development, the way the web should be <3
 
 *Packaged with:*
