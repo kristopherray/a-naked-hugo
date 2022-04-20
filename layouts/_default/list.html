@@ -10,8 +10,8 @@
         <div class="row">
             <div class="col text-center">
 
-                <h2>{{ .Title }}</h2>
-                <p>{{ .Description }}</p>
+                <h2>{{ .Title | safeHTML }}</h2>
+                <p>{{ .Description | safeHTML }}</p>
 
             </div>
         </div>
@@ -34,9 +34,9 @@
             {{ range (.Paginator 1).Pages }}
 
             <div class="col entry">
-                <h2><a href="{{ .Permalink }}">{{.Title}}</a></h2>
+                <h2><a href="{{ .Permalink }}">{{.Title | safeHTML }}</a></h2>
                 <span class="date">{{.Date.Format "January 2, 2006"}}</span>
-                <p>{{ .Description }}</p>
+                <p>{{ .Description | safeHTML }}</p>
                 <a href="{{ .Permalink }}" class="button buttonOutline">Read More &rsaquo;</a>
             </div>
 

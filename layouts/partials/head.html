@@ -5,14 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
     <meta property="og:type" content="website"/>
 
-    <title>{{ .Title }} | {{ .Site.Title }}</title>
-    <meta name="twitter:title" content="{{ .Title }} | {{ .Site.Title }}"/>
-    <meta property="og:title" content="{{ .Title }} | {{ .Site.Title }}"/>
-    <meta property="og:site_name" content="{{ .Title }} | {{ .Site.Title }}"/>
+    <title>{{ .Title | plainify }} | {{ .Site.Title }}</title>
+    <meta name="twitter:title" content="{{ .Title | plainify }} | {{ .Site.Title }}"/>
+    <meta property="og:title" content="{{ .Title | plainify }} | {{ .Site.Title }}"/>
+    <meta property="og:site_name" content="{{ .Title | plainify }} | {{ .Site.Title }}"/>
 
-    <meta name="description" content="{{ .Description }}"/>
-    <meta property="og:description" content="{{ .Description }}"/>
-    <meta name="twitter:description" content="{{ .Description }}"/>
+    <meta name="description" content="{{ .Description | plainify }}"/>
+    <meta property="og:description" content="{{ .Description | plainify }}"/>
+    <meta name="twitter:description" content="{{ .Description | plainify }}"/>
 
     <meta property="og:url" content="{{ .Permalink }}"/>
     <meta name="twitter:url" content="{{ .Permalink }}"/>

@@ -12,9 +12,9 @@
 
         <div class="col text-center animated fadeInScale delay-2">
 
-            <h1>{{ .Title }}</h1>
+            <h1>{{ .Title | safeHTML }}</h1>
 
-            <p>{{ .Description }}</p>
+            <p>{{ .Description | safeHTML }}</p>
 
             <a href="#inquire" class="button buttonOutlineWhite open-popup-link">Lightbox &rsaquo;</a>
 
@@ -66,10 +66,10 @@
                 <div class="entry col-12 aos-item" data-aos="fade-in">
                     <div class="d-flex justify-content-center align-items-center">
                         {{ if .Params.image }}
-                            <div class="col col-sm-4"><a href="{{ .Permalink }}"><img src='{{ .Param "image"}}' class="img-fluid lazy" alt="{{ .Title }}"></a></div>
+                            <div class="col col-sm-4"><a href="{{ .Permalink }}"><img src='{{ .Param "image"}}' class="img-fluid lazy" alt="{{ .Title | safeHTML }}"></a></div>
                         {{end}}
                         <div class="content col col-sm-8">
-                            <h2><a href="{{ .Permalink }}">{{ .Title }}</a></h2>
+                            <h2><a href="{{ .Permalink }}">{{ .Title | safeHTML }}</a></h2>
                             <span>{{ .Date.Format "January 2, 2006" }}</span>
                             <p>{{ .Description }}</p>
                             <a href="{{ .Permalink }}" class="button buttonOutline">Read More</a>
