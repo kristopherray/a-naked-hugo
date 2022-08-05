@@ -29,13 +29,32 @@ collections:
   - name: "news"
     label: "News"
     folder: "content/news"
+    media_folder: '/static/img/news'
+    public_folder: '/img/news'
+    filter: {field: "visible", value: true}
     create: true
     slug: "{{slug}}"
     fields:
+      - {label: "Visible in CMS", name: "visible", widget: hidden, default: true}
       - {label: "Title", name: "title", widget: "string"}
       - {label: "Slug", name: "slug", widget: "string"}
-      - {label: "Date", name: "date", widget: "datetime"}
+      - {label: "Date", name: "date", widget: "date"}
       - {label: "Description", name: "description", widget: "string", required: false}
       - {label: "Body", name: "body", widget: "markdown", required: false}
       - {label: "Featured Image", name: "image", widget: "image" }
-      - {label: "Order", name: "weight", widget: "number" }
+  - label: "Configuration"
+    name: "configuration"
+    files:
+      - name: "config"
+        label: "Global Site Settings"
+        file: "config.yaml"
+        fields:
+          - name: "params"
+            label: "Params"
+            widget: "object"
+            fields:
+              - { label: "Twitter User", name: "twitter_user", widget: "string", required: false }
+              - { label: "Facebook Link", name: "facebook_link", widget: "string", required: false }
+              - { label: "Instagram Link", name: "instagram_link", widget: "string", required: false }
+              - { label: "Paid For Language", name: "paid_for", widget: "string", required: false }
+              - { label: "Form Endpoint", name: "form_endpoint", widget: "string", required: false }
