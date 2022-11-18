@@ -5,14 +5,33 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
     <meta property="og:type" content="website"/>
 
+    <!-- <title> can be separated from metatitle
+        <title>{{ .Title | plainify }} | {{ .Site.Title }}</title>
+    -- Remove <title> in else if used --
+    -->
+
+    {{ if .Params.metaTitle }}
+    <title>{{ .Params.metaTitle | plainify }} | {{ .Site.Title }}</title>
+    <meta name="twitter:title" content="{{ .Params.metatitle | plainify }}"/>
+    <meta property="og:title" content="{{ .Params.metatitle | plainify }}"/>
+    <meta property="og:site_name" content="{{ .Params.metatitle | plainify }}"/>
+    {{else}}
     <title>{{ .Title | plainify }} | {{ .Site.Title }}</title>
     <meta name="twitter:title" content="{{ .Title | plainify }} | {{ .Site.Title }}"/>
     <meta property="og:title" content="{{ .Title | plainify }} | {{ .Site.Title }}"/>
     <meta property="og:site_name" content="{{ .Title | plainify }} | {{ .Site.Title }}"/>
+    {{end}}
+    
 
+    {{ if .Params.metaDescription }}
+    <meta name="description" content="{{ .Params.metaDescription | plainify }}"/>
+    <meta property="og:description" content="{{ .Params.metaDescription | plainify }}"/>
+    <meta name="twitter:description" content="{{ .Params.metaDescription | plainify }}"/>
+    {{else}}
     <meta name="description" content="{{ .Description | plainify }}"/>
     <meta property="og:description" content="{{ .Description | plainify }}"/>
     <meta name="twitter:description" content="{{ .Description | plainify }}"/>
+    {{end}}
 
     <meta property="og:url" content="{{ .Permalink }}"/>
     <meta name="twitter:url" content="{{ .Permalink }}"/>

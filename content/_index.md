@@ -1,4 +1,6 @@
 ---
+metaTitle: Home
+metaDescription: A Naked Hugo Template
 title: Home Page Title
 description: >-
    Meta Page Description or used in banner
