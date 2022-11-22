@@ -89,21 +89,29 @@ h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5 {
   }
 }
 
+.single-default {
+  main {
+    h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5 {
+      margin: 1em 0 0 0;
+    }
+  }
+}
+
 p, li {
-  font-size:1em;
+  font-size:1rem;
   margin:.75em 0 0 0;
   padding:0;
   font: {
     family: $body-font;
-    size: 1em;
+    size: 1rem;
   }
 
   @media(min-width:768px){
-    font-size:1.15em;
+    font-size:1.15rem;
   }
 
   @media(min-width:1200px){
-    font-size:1.25em;
+    font-size:1.25rem;
   }
 
 }
