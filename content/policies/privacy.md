@@ -12,7 +12,7 @@ Last modified: UPDATE DATE
 CompanyName is committed to protecting the privacy of our online guests, users, staff, members, and friends through our compliance with this policy.
 We believe that maintaining privacy on the internet is very important and hope you will read this Privacy Policy carefully so that you will clearly understand both our commitment to you and your privacy and our method of collecting and using information.
 
-This Privacy Policy describes the types of information we may collect from you or that you may provide when you visit the website CompanyName.com and our practices for collecting, using, maintaining, protecting, and disclosing that information. 
+This Privacy Policy describes the types of information we may collect from you or that you may provide when you visit the website CompanyURL.com and our practices for collecting, using, maintaining, protecting, and disclosing that information. 
 
 This Privacy Policy only applies to transactions made, and data gathered, on this Website and associated email and SMS messaging services and does not apply to any other website. By using the Website, communicating with us by email, or by otherwise submitting personal information to us, you agree to the terms of this Privacy Policy; you give your consent to the collection, storage and use of personal information as explained in this Privacy Policy. This Privacy Policy may change from time to time (see Changes to Our Privacy Policy).
 
