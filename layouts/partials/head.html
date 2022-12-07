@@ -16,10 +16,10 @@
     <meta property="og:title" content="{{ .Params.metatitle | plainify }}"/>
     <meta property="og:site_name" content="{{ .Params.metatitle | plainify }}"/>
     {{else}}
-    <title>{{ .Title | plainify }} | {{ .Site.Title }}</title>
-    <meta name="twitter:title" content="{{ .Title | plainify }} | {{ .Site.Title }}"/>
-    <meta property="og:title" content="{{ .Title | plainify }} | {{ .Site.Title }}"/>
-    <meta property="og:site_name" content="{{ .Title | plainify }} | {{ .Site.Title }}"/>
+    <title>{{ .Title | plainify | truncate 60 }} | {{ .Site.Title }}</title>
+    <meta name="twitter:title" content="{{ .Title | plainify | truncate 60 }} | {{ .Site.Title }}"/>
+    <meta property="og:title" content="{{ .Title | plainify | truncate 60 }} | {{ .Site.Title }}"/>
+    <meta property="og:site_name" content="{{ .Title | plainify | truncate 60 }} | {{ .Site.Title }}"/>
     {{end}}
     
 
@@ -28,9 +28,9 @@
     <meta property="og:description" content="{{ .Params.metaDescription | plainify }}"/>
     <meta name="twitter:description" content="{{ .Params.metaDescription | plainify }}"/>
     {{else}}
-    <meta name="description" content="{{ .Description | plainify }}"/>
-    <meta property="og:description" content="{{ .Description | plainify }}"/>
-    <meta name="twitter:description" content="{{ .Description | plainify }}"/>
+    <meta name="description" content="{{ .Description | plainify | truncate 155 }}"/>
+    <meta property="og:description" content="{{ .Description | plainify | truncate 155 }}"/>
+    <meta name="twitter:description" content="{{ .Description | plainify | truncate 155 }}"/>
     {{end}}
 
     <meta property="og:url" content="{{ .Permalink }}"/>
