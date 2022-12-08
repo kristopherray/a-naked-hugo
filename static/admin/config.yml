@@ -1,3 +1,6 @@
+site_url: https://kristopherray.com
+display_url: https://kristopherray.com
+logo_url: https://kristopherray.com/img/login-logo.svg
 backend:
   name: git-gateway
   repo: kristopherray/
