@@ -10,7 +10,13 @@
             </div>
         {{end}}
         <div class="content col col-sm-8">
-            <h3><a href="{{ .Permalink }}">{{ .Title | safeHTML }}</a></h3>
+            <h3>
+                {{ if .Params.outbound }}
+                <a href="{{ .Params.outbound }}">{{ .Title | safeHTML }}</a>
+                {{else}}
+                <a href="{{ .Permalink }}">{{ .Title | safeHTML }}</a>
+                {{end}}
+            </h3>
             <span>{{ .Date.Format "January 2, 2006" }}</span>
             <p>{{ .Description }}</p>
             {{ if .Params.outbound }}

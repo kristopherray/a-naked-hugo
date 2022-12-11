@@ -19,6 +19,19 @@ collections:
           - {label: "Meta Title / Banner Title", name: "title", widget: "string"}
           - {label: "Description and Banner Text", name: "description", widget: "text", required: false}
           - {label: "Lightbox Content", name: "body", widget: "markdown", required: false}
+  - name: "logos"
+    label: "Logo Carousel"
+    folder: "content/logos"
+    media_folder: '/static/img/logos'
+    public_folder: '/img/logos'
+    filter: {field: "visible", value: true}
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - {label: "Visible in CMS", name: "visible", widget: hidden, default: true}
+      - {label: "Logo Name / Title / Alt Tag", name: "title", widget: "string"}
+      - {label: "Logo Image", name: "image", widget: "image" }
+      - {label: "Order", name: "weight", widget: "number" }
   - name: "home_sections"
     label: "Home Sections"
     folder: "content/home_sections"
