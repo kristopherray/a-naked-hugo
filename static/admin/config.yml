@@ -1,6 +1,7 @@
 site_url: https://kristopherray.com
 display_url: https://kristopherray.com
 logo_url: https://kristopherray.com/img/login-logo.svg
+show_preview_links: false
 backend:
   name: git-gateway
   repo: kristopherray/
