@@ -2,10 +2,7 @@
 title: Title of Post
 description: >-
    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla in consectetur orci. Aliquam nec ante ultrices, maximus nulla ac, imperdiet dui.
-date: 2019-12-05
-publishdate: 2019-12-06
-sitemap:
-  priority: 0.8
+date: 2022-12-05
 ---
 
 ## Title Inside a Post

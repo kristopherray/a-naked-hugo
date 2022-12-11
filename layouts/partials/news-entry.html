@@ -1,0 +1,23 @@
+<div class="entry col-12">
+    <div class="d-flex justify-content-center align-items-center">
+        {{ if .Params.image }}
+            <div class="col col-sm-4">
+                {{ if .Params.outbound }}
+                <a href="{{ .Params.outbound }}" target="_blank"><img src='{{ .Param "image"}}' class="img-fluid lazy" alt="{{ .Title | safeHTML }}"></a>
+                {{else}}
+                <a href="{{ .Permalink }}"><img src='{{ .Param "image"}}' class="img-fluid lazy" alt="{{ .Title | safeHTML }}"></a>
+                {{end}}
+            </div>
+        {{end}}
+        <div class="content col col-sm-8">
+            <h3><a href="{{ .Permalink }}">{{ .Title | safeHTML }}</a></h3>
+            <span>{{ .Date.Format "January 2, 2006" }}</span>
+            <p>{{ .Description }}</p>
+            {{ if .Params.outbound }}
+                <a href="{{ .Params.outbound }}" target="_blank" class="button buttonOutline">Read More &rsaquo;</a>
+                {{else}}
+                <a href="{{ .Permalink }}" class="button buttonOutline">Read More &rsaquo;</a>
+            {{end}}
+        </div>
+    </div>
+</div>

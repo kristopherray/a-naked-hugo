@@ -25,6 +25,7 @@ section {
 
   li {
     display: inline-block;
+    text-shadow: 0px 1px 2px rgba(0,0,0,.55);
 
     &.facebook {
       .button {
@@ -35,8 +36,8 @@ section {
 
     &.twitter {
       .button {
-        background: $twitter-blue;
-        border-color: $twitter-blue;
+        background: darken($twitter-blue, 5%);
+        border-color: darken($twitter-blue, 5%);
       }
     }
   }
@@ -45,7 +46,7 @@ section {
 header {
   padding:1rem;
   position: relative;
-  z-index: 9;
+  z-index: 90;
   display:flex;
   align-items: center;
   justify-content: space-between;
@@ -135,6 +136,11 @@ header {
 
         a {
           padding:5px;
+          color: #333;
+
+          &:hover, &:focus {
+            text-decoration: underline;
+          }
 
           @media(max-width:767px){
             display:block;
@@ -146,15 +152,17 @@ header {
 
           }
 
-          &.button {
-            @media(max-width:767px){
-              padding:0;
-              border-radius:0;
-              width:100%;
-            }
-          }
-
         }
+      }
+    }
+
+    .button {
+      background: $blue;
+      border-color: $blue;
+      @media(max-width:767px){
+        padding:0;
+        border-radius:0;
+        width:100%;
       }
     }
   }
@@ -216,17 +224,51 @@ form {
 
 }
 
+#clientLogos {
+  padding: 24px 0;
+  .container-fluid {
+    padding:0;
+  }
+  .logos {
+    padding-top: .5rem;
+  
+    .item {
+      height: 150px;
+      align-items: center;
+      padding:8px 32px 0 32px;
+      img {
+        max-height: 100%;
+        max-width: 205px;
+        width: 100%;
+      }
+    }
+  }
+}
+
 #signup {
   padding:2rem 0;
   background:darken($default,5%);
 }
 
 
-#form {
-  background:#f3f3f3;
+#formSection {
+  background:#333;
 
   .container {
     max-width:1000px;
+  }
+
+  .checkbox {
+    color:#fff;
+
+    input[type=checkbox]:checked+label:before {
+      color: $blue;
+    }
+  }
+
+  .button {
+    background: $blue;
+    border-color: $blue;
   }
 }
 
@@ -277,6 +319,31 @@ footer {
 }
 
 #home {
+
+  #banner {
+    &:before {
+      content:'';
+      width:100%;
+      height:100%;
+      display:block;
+      position:absolute;
+      top:0; 
+      left:0;
+      background: linear-gradient(90deg, #000 0%, rgba(0, 0, 0, 0) 60%);
+      z-index: 9;
+    }
+  
+    @media(max-width:767px){
+      width:100%;
+      height:350px;
+      position:relative;
+  
+      &:before{
+        background: linear-gradient(360deg, #000 0%, rgba(0, 0, 0, 0) 35%);
+      }
+    }
+  
+  }
 
   #section-1 {
     color:#fff;
@@ -339,8 +406,12 @@ footer {
     }
   }
 
-  #news {
-    background: #ccc;
+  #latest-news {
+    background: #000;
+
+    h2 {
+      color: #fff;
+    }
     .entry {
       background:#fff;
       padding:0;
@@ -357,6 +428,29 @@ footer {
     img {
       @media(max-width:575px){
         margin-bottom:20px;
+      }
+    }
+  }
+}
+
+.list-default {
+  #banner {
+    padding-bottom:0;
+  }
+
+  main {
+    background: #333;
+    padding-bottom:5rem;
+    color: #fff;
+    .entry {
+      background:#fff;
+      color: #333;
+      padding:0;
+      margin: 1rem 0;
+      box-shadow: 0px 2px 10px rgba(0,0,0,.15);
+
+      .content {
+        padding:40px;
       }
     }
   }

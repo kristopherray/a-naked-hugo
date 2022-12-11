@@ -1,0 +1,14 @@
+<section id="latest-news">
+    <div class="container">
+        <div class="row mb-4">
+            <h2>Lastest News:</h2>
+        </div>
+        <div class="row">
+            {{ range first 1 (where (.Site.RegularPages) "Type" "news") }}
+            
+                {{ partial "news-entry.html" .}}
+
+            {{end}}
+        </div>
+    </div>
+</section>

@@ -2,10 +2,9 @@
 title: Title of Post
 description: >-
    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla in consectetur orci. Aliquam nec ante ultrices, maximus nulla ac, imperdiet dui.
-date: 2019-12-07
+date: 2022-12-07
 image: https://picsum.photos/500
-sitemap:
-  priority: 0.8
+outbound: https://google.com
 ---
 
 ## Title Inside a Post

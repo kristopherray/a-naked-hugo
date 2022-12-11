@@ -1,16 +1,16 @@
 <div id="preloader"></div>
 
-<header>
+<header aria-label="header">
 
     <a href='{{ "/" | relURL }}' id="headerLogo"><img src='{{ "img/logo.svg" | relURL }}' alt="{{ .Site.Title }} Logo"></a>
 
-    <nav>
+    <nav role="navigation" aria-label="menu">
         <a href="javascript:void(0)" id="toggle-menu"><i class="fa fa-bars"></i>&nbsp; Menu</a>
         <ul>
             {{ partial "menu.html" . }}
             {{ partial "social.html" . }}
             <li>
-                <a href="#form" class="button">Button &rsaquo;</a>
+                <a href="#formSection" class="button">Button &rsaquo;</a>
             </li>
         </ul>
     </nav>

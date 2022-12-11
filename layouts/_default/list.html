@@ -33,12 +33,7 @@
 
             {{ range (.Paginator 1).Pages }}
 
-            <div class="col entry">
-                <h2><a href="{{ .Permalink }}">{{.Title | safeHTML }}</a></h2>
-                <span class="date">{{.Date.Format "January 2, 2006"}}</span>
-                <p>{{ .Description | safeHTML }}</p>
-                <a href="{{ .Permalink }}" class="button buttonOutline">Read More &rsaquo;</a>
-            </div>
+                {{ partial "news-entry.html" . }}
 
             {{ end }}
 
