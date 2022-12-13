@@ -16,10 +16,20 @@ params:
   form_endpoint: 123456
 markup:
   goldmark:
+    attribute: 
+      block: true
     parser:
+      wrapStandAloneImageWithinParagraph: false
       autoHeadingID: false
     renderer:
       unsafe: true
+      hardWraps: false
+imaging:
+  anchor: Smart
+  bgColor: '#ffffff'
+  hint: photo
+  quality: 75
+  resampleFilter: Box
 
 menu:
   main:

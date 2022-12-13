@@ -4,7 +4,7 @@
             <h2>Lastest News:</h2>
         </div>
         <div class="row">
-            {{ range first 1 (where (.Site.RegularPages) "Type" "news") }}
+            {{ range first 2 (where (.Site.RegularPages) "Type" "news") }}
             
                 {{ partial "news-entry.html" .}}
 

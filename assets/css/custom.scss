@@ -442,6 +442,7 @@ footer {
     background: #333;
     padding-bottom:5rem;
     color: #fff;
+
     .entry {
       background:#fff;
       color: #333;
@@ -451,6 +452,36 @@ footer {
 
       .content {
         padding:40px;
+      }
+    }
+  }
+}
+
+.single-default {
+  main {
+    .container {
+      max-width:900px;
+
+      p {
+        margin: 8px 0;
+      }
+
+      blockquote {
+        padding-left: 30px;
+        margin-top:1rem;
+        margin-bottom:1rem;
+        position: relative;
+
+        &:before {
+          content:'';
+          width:5px;
+          height:100%;
+          background: $blue;
+          display:block;
+          position:absolute;
+          left:0;
+          top:0;
+        }
       }
     }
   }
