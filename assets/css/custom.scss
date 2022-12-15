@@ -512,6 +512,22 @@ footer {
         margin: 8px 0;
       }
 
+      h5 {
+        font-weight:400;
+      }
+
+      img, figure {
+        margin-top:.5rem;
+      }
+
+      .img-fluid {
+        width:100%;
+        height:auto;
+        img {
+        @extend .img-fluid;
+        }
+      }
+
       blockquote {
         padding-left: 30px;
         margin-top:1rem;

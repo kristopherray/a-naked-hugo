@@ -3,19 +3,21 @@ title: Title of Post
 description: >-
    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla in consectetur orci. Aliquam nec ante ultrices, maximus nulla ac, imperdiet dui.
 date: 2022-12-05
-youtubebg: dQw4w9WgXcQ
+vimeobg: 39008039
 ---
 
 ## Title Inside a Post
 
-This is an inline image: ![Inline Image](https://picsum.photos/100). Some more text.
-
-![Sample Image](https://picsum.photos/500)
+![Sample Image](https://picsum.photos/1000/400)
 {.img-fluid}
+
+##### **Description:** An example placeholder below an image is seen inside a body post{.small}
 
 ### Smaller Title Inside a Post
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla in consectetur orci. Aliquam nec ante ultrices, maximus nulla ac, imperdiet dui. Aenean ut pulvinar neque. Mauris varius faucibus leo. Sed in molestie purus, eu maximus sem. Duis quis elementum tellus. Duis gravida, est vitae pellentesque pellentesque, dui nisl tristique sapien, in ornare ligula urna eget sem. Pellentesque auctor justo a mauris rhoncus feugiat. Proin cursus nibh ac mi suscipit, pretium pulvinar arcu efficitur.
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla in consectetur orci. Aliquam nec ante ultrices, maximus nulla ac, imperdiet dui. Aenean ut pulvinar neque. Mauris varius faucibus leo. Sed in molestie purus, eu maximus sem. Duis quis elementum tellus.
+
+This is an inline image: ![Inline Image](https://picsum.photos/100). Some more text. Duis gravida, est vitae pellentesque pellentesque, dui nisl tristique sapien, in ornare ligula urna eget sem. Pellentesque auctor justo a mauris rhoncus feugiat. Proin cursus nibh ac mi suscipit, pretium pulvinar arcu efficitur.
 
 {{< youtube dQw4w9WgXcQ >}}
 
