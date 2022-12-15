@@ -8,10 +8,10 @@ youtubebg: dQw4w9WgXcQ
 
 ## Title Inside a Post
 
-This is an inline image: ![Inline Image](https://picsum.photos/700). Some more text.
+This is an inline image: ![Inline Image](https://picsum.photos/100). Some more text.
 
 ![Sample Image](https://picsum.photos/500)
-{.sample}
+{.img-fluid}
 
 ### Smaller Title Inside a Post
 
