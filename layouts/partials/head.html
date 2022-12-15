@@ -45,11 +45,11 @@
     <meta name="theme-color" content="#ffffff">
 
     {{ if .Params.og_img }}
-    <meta property="og:image" content='{{ .Site.BaseURL }}/{{ .Param "og_img" }}'/>
-    <meta property="twitter:image" content='{{ .Site.BaseURL }}/{{ .Param "og_img" }}'/>
+    <meta property="og:image" content='{{ .Params.og_img }}'/>
+    <meta property="twitter:image" content='{{ .Params.og_img }}'/>
     {{ else }}
-    <meta property="og:image" content="{{ .Site.BaseURL }}/img/og-img.png"/>
-    <meta property="twitter:image" content="{{ .Site.BaseURL }}/img/og-img.png"/>
+    <meta property="og:image" content="/img/og-img.png"/>
+    <meta property="twitter:image" content="/img/og-img.png"/>
     {{ end }}
     <meta property="og:image:width" content="1200"/>
     <meta property="og:image:height" content="628"/>
@@ -67,10 +67,7 @@
         deferstyle('//use.fontawesome.com/releases/v5.8.2/css/all.css', 'fontawesome-css', 300);
     </script>
 
-    <script type="text/javascript">
-        // This will lzay-load FontAwesome icons
-        deferstyle('//use.typekit.net/fej5sdm.css', 'typekit-css', 300);
-    </script>
+    <link rel="stylesheet" href="https://use.typekit.net/fej5sdm.css">
 
     {{ $sass := resources.Get "css/style.scss" }}
     {{ $style := $sass | resources.ToCSS | minify }}
