@@ -71,6 +71,7 @@ header {
     position:relative;
     margin:1rem 0;
     display:inline-block;
+    font-weight: 700;
 
     #toggle-menu {
       display:none;
@@ -126,6 +127,7 @@ header {
           font-size:1.65em;
           vertical-align: middle;
           margin:2px;
+          font-weight:normal;
 
           @media(max-width:767px){
             width:auto;
@@ -246,17 +248,18 @@ form {
 }
 
 #clientLogos {
-  padding: 24px 0;
+  padding: 32px 0;
+  filter: grayscale(1);
   .container-fluid {
     padding:0;
   }
   .logos {
-    padding-top: .5rem;
+    padding-top: .25rem;
   
     .item {
       height: 150px;
       align-items: center;
-      padding:8px 32px 0 32px;
+      padding:8px 40px 0 40px;
       img {
         max-height: 100%;
         max-width: 205px;
