@@ -183,7 +183,7 @@ header {
     z-index: 0;
   }
 
-  .vimeo-wrapper {
+  .video-wrapper {
     position: absolute;
     top: 0;
     left: 0;
@@ -193,7 +193,7 @@ header {
     pointer-events: none;
     overflow: hidden;
  }
- .vimeo-wrapper iframe {
+ .video-wrapper iframe {
     width: 100vw;
     height: 56.25vw; /* Given a 16:9 aspect ratio, 9/16*100 = 56.25 */
     min-height: 100vh;
