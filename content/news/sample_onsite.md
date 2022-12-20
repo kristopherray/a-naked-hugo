@@ -4,6 +4,7 @@ description: >-
    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla in consectetur orci. Aliquam nec ante ultrices, maximus nulla ac, imperdiet dui.
 date: 2022-12-05
 vimeobg: 363037630
+visible: true
 ---
 
 ## Title Inside a Post

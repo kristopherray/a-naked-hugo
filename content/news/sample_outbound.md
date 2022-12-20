@@ -5,4 +5,5 @@ description: >-
 date: 2022-12-07
 image: https://picsum.photos/500
 outbound: https://google.com
+visible: true
 ---
