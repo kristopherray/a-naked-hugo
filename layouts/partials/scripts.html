@@ -1,9 +1,54 @@
-<script type="deferjs" src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tiny-slider/2.9.4/tiny-slider.css">
 {{ $js := resources.Get "js/plugins.js" }}
 {{ $secureJS := $js | resources.Minify }}
-<script type="deferjs" src="{{ $secureJS.Permalink }}"></script>
+<script src="{{ $secureJS.Permalink }}"></script>
 
 <script>
     deferimg('img[data-src],picture,video,audio')
     Defer.dom('img.lazy', 200, 'loaded');
+
+
+// Tiny Slider
+var slider = tns({
+    container: "#carousel",
+    items: 6,
+    gutter: 0,
+    slideBy: 1,
+    controlsPosition: "bottom",
+    navPosition: "bottom",
+    mouseDrag: true,
+    autoplay: true,
+    autoplayButtonOutput: false,
+    preventActionWhenRunning: true,
+    autoplayTimeout: 0,
+    //controlsContainer: "#custom-control",
+    speed: 6000,
+    controls: false,
+    nav: false,
+    loop: true,
+    responsive: {
+      0: {
+        items: 2,
+        nav: false
+      },
+      768: {
+        items: 4,
+        nav: false
+      },
+      1440: {
+        items: 6
+      },
+      1800: {
+        items: 7
+      }
+    },
+    // mode: 'gallery',
+    // speed: 2000,
+    // animateIn: "scale",
+
+    // edgePadding: 20,
+    
+  });
+  
 </script>

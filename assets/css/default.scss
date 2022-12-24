@@ -370,14 +370,14 @@ form {
     input[type=checkbox] { display:none; } /* to hide the checkbox itself */
 
     input[type=checkbox] + label:before {
-      font-family: "Font Awesome 5 Free";
+      font-family: "Font Awesome 6 Pro";
       display: inline-block;
     }
 
-    input[type=checkbox] + label:before { content: "\f0c8"; font-style: normal !important; } /* unchecked icon */
+    input[type=checkbox] + label:before { content: "\f111"; font-style: normal !important; } /* unchecked icon */
     input[type=checkbox] + label:before { letter-spacing: 10px; } /* space between checkbox and label */
 
-    input[type=checkbox]:checked + label:before { content: "\f14a"; font-style: normal !important;
+    input[type=checkbox]:checked + label:before { content: "\f058"; font-style: normal !important;
       color: lighten($btn-color,10%); } /* checked icon */
     input[type=checkbox]:checked + label:before { letter-spacing: 10px; } /* allow space for check mark */
 

@@ -6,16 +6,14 @@
             </div>
         </div>
     
-            <div class="owl-carousel owl-theme logos" id="carousel">
+            <div class="logos" id="carousel">
                 
                 {{ range where (.Site.RegularPages.ByWeight) "Type" "logos" }}
-                <div class="item d-flex align-items-center">
                 <div>
                     <img src="{{ .Params.image }}" alt="{{ .Title }} Logo"/>
                 </div>
-                </div>
                 {{end}}
-               
+                
             </div>
     
     </div>  
