@@ -1,0 +1,20 @@
+<section id="clients">
+    <div class="container-fluid">
+        <div class="row justify-content-center">
+            <div class="col-12 text-center mb-3">
+                <h2>Some Really Nice Logos:</h2>
+            </div>
+        </div>
+        <div class="client-logos">
+            <div class="owl-carousel owl-theme">
+                {{ range where (.Site.RegularPages.ByWeight) "Type" "logos" }}
+                <div class="item flex">
+                    <div class="logoBx">
+                        <img src="{{ .Params.image }}" alt="{{ .Title }} Logo" />
+                    </div>
+                </div>
+                {{end}}
+            </div>
+        </div>
+    </div>
+</section>

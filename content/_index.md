@@ -1,16 +1,19 @@
 ---
+title: Naked Hugo <span>2023</span>
 metaTitle: Home
-metaDescription: A Naked Hugo Template
-title: Home Page Title
+metaDescription: The Official Naked Hugo Template by and for Kristopher Ray Creative and all who love hugo.
 description: >-
-   Meta Page Description or used in banner
-youtubebg: R5jIoLnL_nE
+   Just dont call it a template.
+sections: "home"
+banner_image: https://picsum.photos/1500
+banner_video: 845939562
+banner_btn_label: Call to Action →
 sitemap:
   priority: 1
 ---
 
 ## Single Home Section
 
-**Lorem ipsum dolor sit amet**, consectetur adipisicing elit.
+**Enjoy** some shortcode rick rolling.
 
 {{< youtube dQw4w9WgXcQ >}}

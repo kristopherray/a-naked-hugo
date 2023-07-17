@@ -1,7 +1,7 @@
 ---
-title: Title
+title: Thank You!
 description: >-
-   Description
+   We've received your submission!
 sitemap:
-  priority: 0.8
+  priority: 0
 ---

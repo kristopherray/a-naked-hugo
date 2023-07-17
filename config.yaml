@@ -1,9 +1,9 @@
 baseURL:
 languageCode: en-us
-title: A Naked Hugo Site Title
-disableKinds:
-  - taxonomy
-  - taxonomyTerm
+title: Naked Hugo
+taxonomies:
+  category: categories
+  section_category: section_categories
 enableRobotsTXT: true
 paginate: 1
 params:

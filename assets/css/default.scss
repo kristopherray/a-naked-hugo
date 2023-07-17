@@ -23,28 +23,29 @@ html, body {
 }
 
 section {
-  padding: 2rem 0;
+  padding: 60px 0;
   font-size: $base-fontsize;
   position:relative;
 
   @media(min-width:768px){
-    padding:3rem 0;
+    padding:100px 0;
   }
 
   @media(min-width:992px){
-    padding:5rem 0;
+    padding:150px 0;
   }
 
   @media(min-width:1200px){
-    padding:8rem 0;
+    padding:200px 0;
   }
 
-  .container {
+  .container, .container-fluid {
+    z-index: 9;
 
     .row {
 
       .button {
-        margin-top:1rem;
+        margin-top:24px;
       }
 
       form {
@@ -125,7 +126,7 @@ p, li {
   font-family:$button-font;
   height:$line-height-desktop;
   line-height:$line-height-desktop - 5px;
-  padding:0 1.15rem;
+  padding:0 24px;
   display: inline-block;
   -webkit-border-radius: $button-radius;
   -moz-border-radius:$button-radius;
@@ -460,18 +461,7 @@ main {
   top:0;
   left:0;
   overflow: hidden;
-
-  &:before {
-    content:'';
-    width:100%;
-    height:100%;
-    display:block;
-    position:absolute;
-    top:0; 
-    left:0;
-    background: linear-gradient(270deg, #FFFFFF 0%, rgba(255, 255, 255, 0) 30%);
-    z-index: 9;
-  }
+  z-index: 0;
 
   img {
     object-fit: cover;
@@ -484,9 +474,5 @@ main {
     width:100%;
     height:350px;
     position:relative;
-
-    &:before{
-      background: linear-gradient(360deg, #FFFFFF 0%, rgba(255, 255, 255, 0) 35%);
-    }
   }
 }

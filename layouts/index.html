@@ -7,76 +7,107 @@
 
 <section id="banner" role="banner">
 
-<div class="container">
+    {{if .Params.banner_image}} 
+    <div class="banner-image bg-image"><img src="{{.Params.banner_image}}" /></div>
+    {{end}}
 
-    <div class="row">
-
-        <div class="col animated fadeIn delay-1">
-
-            <h1>{{ .Title | safeHTML }}</h1>
-
-            <p>{{ .Description | safeHTML }}</p>
-
-            <a href="#inquire" class="button buttonOutlineWhite open-popup-link mt-4">Lightbox &rsaquo;</a>
-
-        </div>
-
+    {{if .Params.banner_video}} 
+    <div class="banner-image bg-image video-wrapper">
+        <iframe src="https://player.vimeo.com/video/{{.Params.banner_video}}?background=1" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+        <script src="https://player.vimeo.com/api/player.js"></script>
     </div>
+    {{end}}
 
-</div>
+    <div class="container">
+        <div class="row">
+            <div class="col col-12 col-md-8 col-lg-8 bannerTxtCol">
+                <div class="bannerTxtBx animated fadeIn">
+                    <h2>
+                        {{if .Params.banner_title}}
+                        {{.Params.banner_title|safeHTML}}
+                        {{ else}}
+                        {{ .Title | safeHTML }}
+                        {{end}}
+                    </h2>
 
-    {{/*  <video playsinline autoplay muted loop poster='{{"video/bg.jpg" | relURL }}' data-src='{{"video/bg-small.mp4" | relURL }}' id="bgvid" class="lazy">
-        <source data-src='{{"video/bg-small.webm" | relURL }}' type="video/webm">
-        <source data-src='{{"video/bg-small.mp4" | relURL }}' type="video/mp4">
-    </video>  */}}
+                    {{if .Params.banner_tagline}}
+                    <div class="bannerTagline">
+                        {{.Params.banner_tagline | safeHTML}}
+                    </div>
+                    {{end}}
 
-    <div class="video-wrapper"><iframe src="https://player.vimeo.com/video/363037630?background=1&muted=1" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe><script src="https://player.vimeo.com/api/player.js"></script></div>
+                    {{if .Description }}
+                    <p>{{ .Description | safeHTML}}</p>
+                    {{end}}
+
+                    {{ if .Params.banner_btn_label}}
+                    <a class="button" href="{{.Params.banner_btn_link}}">{{.Params.banner_btn_label | safeHTML}}</a>
+                    {{end}}
+                    
+                    {{ if .Params.banner_link_label}}
+                    <div class="bannerLink">or <a href="{{.Params.banner_link}}">{{.Params.banner_link_label | safeHTML}}</a></div>
+                    {{end}}
+                </div>
+            </div>
+        </div>
+    </div>
 
 </section>
 
+{{ partial "client-logos.html" . }}
 
-<main role="main">
 
+<main role="main" class="main-sections">
 
     <section id="signup">
         <div class="container">
-    
+            
+            <div class="row">
+                <div class="col-12 text-center">
+                    <h2 class="mb-3">
+                        <a href="#signup">Sign Up for Updates</a>
+                    </h2>
+                </div>
+            </div>
             {{ partial "signup.html" .}}
     
         </div>
     </section>
 
-    {{ partial "clientLogos.html" . }}
+    {{ $myVar := .Params.sections }}
+    {{ $mgatag := index site.Taxonomies.section_categories }}
+        {{ range $k, $v := $mgatag }}
+            {{ if eq $k $myVar }}
+                {{ range $v.Pages }}
+                    <section id="{{ .Params.id }}">
 
-    {{ range where (.Site.RegularPages.ByWeight) "Type" "home_sections" }}
-        <section id="{{ .Params.id }}">
+                        {{ if .Params.image }}
+                        <div class="bg-image">
+                            <img src='{{ .Params.image }}' class="lazy img-fluid" alt="{{ .Site.Title }} - {{ .Title }} Image">
+                        </div>
+                        {{end}}
 
-            {{ if .Params.image }}
-            <div class="bg-image aos-item" data-aos="fade-in">
-                <img src='{{ .Params.image }}' class="lazy img-fluid" alt="{{ .Site.Title }} - {{ .Title }} Image">
-            </div>
-            {{end}}
+                        {{ if .Params.vimeobg }}
+                        <div class="video-wrapper bg-image"><iframe src="https://player.vimeo.com/video/{{.Params.vimeobg}}?background=1" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe><script src="https://player.vimeo.com/api/player.js"></script></div>
+                        {{end}}
 
-            <div class="container">
-                <div class="row {{ .Params.position }}">
-                    <div class="col-12 {{ .Params.size }}">
-                        {{ .Content }}
-                    </div>
-                </div>
-            </div>
-        </section>
-    {{end}}
+                        <div class="container">
+                            <div class="row {{ .Params.position }} ">
+                                {{if .Params.section_image}}
+                                <div class="col sectionImgCol aos-item" data-aos="fade">
+                                    <img src="{{.Params.section_image}}"/>
+                                </div>
+                                {{end}}
+                                <div class="col col-12 sectionColTxt {{ .Params.size }} aos-item" data-aos="fade-in">
+                                {{ .Content }}
+                                </div>
+                            </div>
+                        </div>
 
-    {{ partial "latest-news.html" . }}
-
-    <section id="formSection">
-        <div class="container">
-    
-            {{ partial "form.html" .}}
-    
-        </div>
-    </section>
-
+                    </section>
+                {{ end }}
+            {{ end }}
+        {{ end }}
 </main>
 
 <div id="inquire" class="mfp-hide">
@@ -92,11 +123,14 @@
 
 </div>
 
+{{ partial "latest-news.html" . }}
+
 {{ partial "footer.html" . }}
 
 {{ partial "scripts.html" . }}
 
-<script>
+<!-- Enable for NetlifyCMS -->
+{{/*  <script>
     if (window.netlifyIdentity) {
         window.netlifyIdentity.on("init", user => {
             if (!user) {
@@ -106,7 +140,7 @@
             }
         });
     }
-</script>
+</script>  */}}
 
 </body>
 </html>
