@@ -6,10 +6,11 @@
 This "template" *(I hate that word)* follows best-practices and preferences for my Hugo / Netlify workflow. It is a clean and lean foundation for all my new projects that leverages the familiar Bootstrap 5.1.3 grid framework and some misc. helpers, but stripped of the features I never use. Everything else is "naked" and ready for a custom development, the way the web should be <3
 
 *Packaged with:*
-- [All the original <3 Bootstrap](https://getbootstrap.com/) [5.1.3]
+- [All the original <3 Bootstrap](https://getbootstrap.com/) [5.1.3] *customized and minified*
 - [Magnific Popup](https://dimsemenov.com/plugins/magnific-popup/)
 - [Animate on Scroll (AOS)](https://michalsnik.github.io/aos/)
-- [NetlifyCMS](https://netlifycms.org)
+- [Owl Carousel](https://github.com/OwlCarousel2/OwlCarousel2)
+- [NetlifyCMS](https://netlifycms.org) *Ready*
 
 **Deployment Ready for Netlify**
 
@@ -28,3 +29,11 @@ This "template" *(I hate that word)* follows best-practices and preferences for 
 `localhost:1313` (or whatever is displayed in the command prompt)
 
 For more information on using Hugo [View the Documentation](https://gohugo.io/documentation/)
+
+#### **Deploy To Netlify:**
+
+1. Deploy Code to Github (Notate Name / URL)
+
+2. Connect Repository to Netlify and Deploy New Site
+
+3. Your Site is Deployed to Netlify, Congrats!
