@@ -2,14 +2,18 @@
 $header-font:proxima-nova, sans-serif;
 $body-font: proxima-nova, sans-serif;
 $button-font: proxima-nova, sans-serif;
+$base-fontsize: 16px;
 
 /* Form and Button Styling */
-$button-radius: 5px;
-$form-radius: 5px;
-$line-height-desktop: 60px;
-$line-height-mobile: 50px;
+$button-radius: 8px;
+$form-radius: 8px;
+$line-height-desktop: 64px;
+$line-height-mobile: 48px;
 
-$base-fontsize: 16px;
+$input-padding-top: 7px;
+$input-padding-right: 7px;
+$input-padding-bottom: 7px;
+$input-padding-left: 7px;
 
 $max-width: 1200px;
 $body-background: #fff;

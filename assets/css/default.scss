@@ -199,17 +199,13 @@ form {
 
   .col{
     position:relative;
-    $input-padding-top: .5rem;
-    $input-padding-right: .5rem;
-    $input-padding-bottom: .5rem;
-    $input-padding-left: .5rem;
     padding:$input-padding-top $input-padding-right $input-padding-bottom $input-padding-left;
 
     label {
       position:absolute;
       font-size:1.25rem;
       line-height:$line-height-desktop;
-      left:.85rem + $input-padding-left;
+      left:8px + $input-padding-left;
       pointer-events: none;
       -webkit-transition: all .25s ease-in-out;
       -moz-transition: all .25s ease-in-out;
@@ -222,31 +218,21 @@ form {
         line-height: $line-height-mobile;
       }
 
-      &.toggle-label {
-        position:absolute;
-        top:.75rem + $input-padding-top;
-        left:1rem + $input-padding-left;
-        line-height:.75rem;
-        font-size:.75rem;
-        font-weight:700;
-        text-transform:uppercase;
-        letter-spacing:.05rem;
-      }
     }
 
     &.toggle-label {
       label {
         position:absolute;
-        top:.75rem + $input-padding-top;
-        left:.85rem + $input-padding-left;
+        top:8px + $input-padding-top;
+        left:8px + $input-padding-left;
         line-height:.75rem;
         font-size:.75rem;
         font-weight:700;
         letter-spacing:.05rem;
 
         @media(max-width:767px){
-          top:.55rem + $input-padding-top;
-          left:.75rem + $input-padding-left;
+          top:5px + $input-padding-top;
+          left:5px + $input-padding-left;
         }
       }
     }
