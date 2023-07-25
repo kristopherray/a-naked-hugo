@@ -12,8 +12,4 @@ sitemap:
   priority: 1
 ---
 
-## Single Home Section
-
-**Enjoy** some shortcode rick rolling.
-
-{{< youtube dQw4w9WgXcQ >}}
+## Single Home Section Lightbox Plain Content
