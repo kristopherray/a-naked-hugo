@@ -60,11 +60,11 @@
     <meta name="twitter:creator" content="@{{ .Site.Params.twitter_user }}" />
     {{ end }}
 
-    <script inline id="defer-js" src="https://cdn.jsdelivr.net/npm/@shinsenter/defer.js@2.5.0/dist/defer_plus.min.js"></script>
+    <script id="defer-js" src="https://cdn.jsdelivr.net/npm/@shinsenter/defer.js@2.5.0/dist/defer_plus.min.js"></script>
 
     <script async src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/js/all.min.js" crossorigin="anonymous"></script>
 
-    <link inline rel="stylesheet" href="https://use.typekit.net/fej5sdm.css">
+    <link rel="stylesheet" href="https://use.typekit.net/fej5sdm.css">
 
     {{ $sass := resources.Get "css/style.scss" }}
     {{ $style := $sass | resources.ToCSS | minify }}

@@ -31,9 +31,3 @@
 
 [[plugins]]
 package = "netlify-plugin-image-optim"
-
-[[plugins]]
-  package = "netlify-plugin-inline-critical-css"
-
-[[plugins]]
-  package = "netlify-plugin-inline-source"

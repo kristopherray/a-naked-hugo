@@ -4,8 +4,8 @@ weight: 2
 id: section-2
 position: justify-content-start align-content-center
 size: col-12 col-sm-6 col-md-5
-#image: https://picsum.photos/800
-vimeobg: 845939562
+image: https://picsum.photos/800
+#vimeobg: 845939562
 section_categories:
     - Home
 ---
