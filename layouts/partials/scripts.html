@@ -1,7 +1,7 @@
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script async src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 {{ $js := resources.Get "js/plugins.js" }}
 {{ $secureJS := $js | resources.Minify }}
-<script src="{{ $secureJS.Permalink }}"></script>
+<script async src="{{ $secureJS.Permalink }}"></script>
 
 <script>
     deferimg('img[data-src],picture,video,audio')
