@@ -7,6 +7,7 @@ size: col-12 col-md-6
 image: https://picsum.photos/700
 section_categories:
     - Home
+    - News
 ---
 
 ## Content Body Title - Section 1

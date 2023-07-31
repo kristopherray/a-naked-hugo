@@ -23,7 +23,7 @@
 
     <div class="container">
 
-        <div class="row">
+        <div id="page-content" class="row">
             <div class="col">
                 {{ .Content }}
             </div>
@@ -45,6 +45,10 @@
     </div>
 
 </main>
+
+{{ partial "page-sections.html" .}}
+
+{{ partial "signup.html" .}}
 
 {{ partial "footer.html" . }}
 

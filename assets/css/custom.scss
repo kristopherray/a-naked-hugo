@@ -348,6 +348,12 @@ footer {
     }
 
   }
+
+  p {
+    a {
+      color:#fff;
+    }
+  }
 }
 
 .mfp-bg {
@@ -367,6 +373,107 @@ footer {
 
   .button {
     margin-top:1rem;
+  }
+}
+
+
+#section-1 {
+  color:#333;
+  background: #f3f3f3;
+
+  @media(max-width:767px){
+    padding-top:0;
+  }
+  .bg-image {
+    width:56%;
+    height:100%;
+    top:0;
+    left:0;
+  
+    &:before {
+      content:'';
+      width:100%;
+      height:100%;
+      display:block;
+      position:absolute;
+      top:0; 
+      left:0;
+      background: linear-gradient(270deg, #f3f3f3 0%, rgba(255, 255, 255, 0) 40%);
+      z-index: 9;
+    }
+  
+    @media(max-width:767px){
+      height:350px;
+      width:100%;
+  
+      &:before{
+        background: linear-gradient(360deg, #f3f3f3 0%, rgba(255, 255, 255, 0) 35%);
+      }
+    }
+  }
+}
+
+#section-2 {
+  color:#333;
+  background: #f3f3f3;
+
+  @media(max-width:575px){
+    padding-top:0;
+  }
+
+  video {
+    object-fit: cover;
+    width: 100vw;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 0;
+  }
+
+  .video-wrapper {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+    pointer-events: none;
+    overflow: hidden;
+  }
+  .video-wrapper iframe {
+      width: 100vw;
+      height: 56.25vw; /* Given a 16:9 aspect ratio, 9/16*100 = 56.25 */
+      min-height: 100vh;
+      min-width: 177.77vh; /* Given a 16:9 aspect ratio, 16/9*100 = 177.77 */
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+  }
+
+  .bg-image {
+    width:60%;
+    height:100%;
+    top:0;
+    left:50%;
+    position:absolute;
+  
+    &:before {
+      background: none;
+    }
+  
+    @media(max-width:575px){
+      height:350px;
+      width:100%;
+      position:relative;
+      left:0;
+      margin-bottom:20px;
+  
+      &:before{
+        background: none;;
+      }
+    }
   }
 }
 
@@ -406,106 +513,6 @@ footer {
       }
     }
   
-  }
-
-  #section-1 {
-    color:#333;
-    background: #f3f3f3;
-
-    @media(max-width:767px){
-      padding-top:0;
-    }
-    .bg-image {
-      width:56%;
-      height:100%;
-      top:0;
-      left:0;
-    
-      &:before {
-        content:'';
-        width:100%;
-        height:100%;
-        display:block;
-        position:absolute;
-        top:0; 
-        left:0;
-        background: linear-gradient(270deg, #f3f3f3 0%, rgba(255, 255, 255, 0) 40%);
-        z-index: 9;
-      }
-    
-      @media(max-width:767px){
-        height:350px;
-        width:100%;
-    
-        &:before{
-          background: linear-gradient(360deg, #f3f3f3 0%, rgba(255, 255, 255, 0) 35%);
-        }
-      }
-    }
-  }
-
-  #section-2 {
-    color:#333;
-    background: #f3f3f3;
-
-    @media(max-width:575px){
-      padding-top:0;
-    }
-
-    video {
-      object-fit: cover;
-      width: 100vw;
-      height: 100%;
-      position: absolute;
-      top: 0;
-      left: 0;
-      z-index: 0;
-    }
-
-    .video-wrapper {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      z-index: 0;
-      pointer-events: none;
-      overflow: hidden;
-    }
-    .video-wrapper iframe {
-        width: 100vw;
-        height: 56.25vw; /* Given a 16:9 aspect ratio, 9/16*100 = 56.25 */
-        min-height: 100vh;
-        min-width: 177.77vh; /* Given a 16:9 aspect ratio, 16/9*100 = 177.77 */
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-    }
-
-    .bg-image {
-      width:60%;
-      height:100%;
-      top:0;
-      left:50%;
-      position:absolute;
-    
-      &:before {
-        background: none;
-      }
-    
-      @media(max-width:575px){
-        height:350px;
-        width:100%;
-        position:relative;
-        left:0;
-        margin-bottom:20px;
-    
-        &:before{
-          background: none;;
-        }
-      }
-    }
   }
 
   #latest-news {
@@ -550,13 +557,16 @@ footer {
 
 .list-default {
   #banner {
-    padding-bottom:0;
+    padding: 80px 0 32px;
+  }
+
+  #page-content {
+    color: #fff;
   }
 
   main {
     background: #333;
     padding-bottom:5rem;
-    color: #fff;
 
     .entry {
       background:#fff;
