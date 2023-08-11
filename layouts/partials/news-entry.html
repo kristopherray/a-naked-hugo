@@ -10,6 +10,16 @@
             </div>
         {{end}}
         <div class="content col col-sm-8">
+
+
+            {{ if .Params.categories }}
+            <h2 class="post-categories">
+                {{ range $idx, $category := .Params.categories }}
+                {{- if ne $idx 0 }} | {{ end }}<a href='{{ "/categories/" | relURL }}{{ $category | urlize }}'>{{ $category }}</a>
+                {{- end }}
+            </h2>
+            {{end}}
+
             <h3>
                 {{ if .Params.outbound }}
                 <a href="{{ .Params.outbound }}" target="_blank">{{ .Title | safeHTML }}</a>
@@ -17,7 +27,14 @@
                 <a href="{{ .Permalink }}">{{ .Title | safeHTML }}</a>
                 {{end}}
             </h3>
-            <span>{{ .Date.Format "January 2, 2006" }}</span>
+            
+            
+                
+            {{ if .Params.Date }}
+            <span class="date">{{ .Date.Format "01.02.2006" }} </span> 
+            {{end}}
+           
+
             <p>{{ .Description }}</p>
             {{ if .Params.outbound }}
                 <a href="{{ .Params.outbound }}" target="_blank" class="button buttonOutline">Read More &rsaquo;</a>
