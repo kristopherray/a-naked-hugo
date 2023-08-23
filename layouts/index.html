@@ -8,7 +8,7 @@
 <section id="banner" role="banner">
 
     {{if .Params.banner_image}} 
-    <div class="banner-image bg-image"><img src="{{.Params.banner_image}}" /></div>
+    <div class="banner-image bg-image"><img class="lazyload" data-src="{{.Params.banner_image}}" /></div>
     {{end}}
 
     {{if .Params.banner_video}} 

@@ -11,7 +11,7 @@ params:
   twitter_link: https://twitter.com/
   facebook_link: http://www.facebook.com/
   instagram_link: https://www.instagram.com/
-  #google_analytics: UA-
+  #gtm: GTM-123456
   paid_for: Paid for by Language - Kristopher Ray Creative
   form_endpoint: 123456
 markup:

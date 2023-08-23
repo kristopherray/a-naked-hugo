@@ -1,2 +1,2 @@
-{{ if .IsBlock }}<figure class="{{ .Attributes.class }}"><img src="{{ .Destination | safeURL }}" alt="{{ .Text }}" /></figure>
-{{ else }}<img src="{{ .Destination | safeURL }}" alt="{{ .Text }}" />{{ end }}
+{{ if .IsBlock }}<figure class="{{ .Attributes.class }}"><img class="lazyload" data-src="{{ .Destination | safeURL }}" alt="{{ .Text }}" /></figure>
+{{ else }}<img class="lazyload" data-src="{{ .Destination | safeURL }}" alt="{{ .Text }}" />{{ end }}

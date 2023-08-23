@@ -2,8 +2,3 @@
 {{ $js := resources.Get "js/plugins.js" }}
 {{ $secureJS := $js | resources.Minify }}
 <script src="{{ $secureJS.Permalink }}"></script>
-
-<script>
-    deferimg('img[data-src],picture,video,audio')
-    Defer.dom('img.lazy', 200, 'loaded');  
-</script>

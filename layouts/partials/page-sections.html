@@ -7,7 +7,7 @@
 
                 {{ if .Params.image }}
                 <div class="bg-image">
-                    <img src='{{ .Params.image }}' class="lazy img-fluid" alt="{{ .Site.Title }} - {{ .Title }} Image">
+                    <img data-src='{{ .Params.image }}' class="lazyload img-fluid" alt="{{ .Site.Title }} - {{ .Title }} Image">
                 </div>
                 {{end}}
 
@@ -19,7 +19,7 @@
                     <div class="row {{ .Params.position }} ">
                         {{if .Params.section_image}}
                         <div class="col sectionImgCol aos-item" data-aos="fade">
-                            <img src="{{.Params.section_image}}"/>
+                            <img data-src="{{.Params.section_image}}"/>
                         </div>
                         {{end}}
                         <div class="col col-12 sectionColTxt {{ .Params.size }} aos-item" data-aos="fade-in">

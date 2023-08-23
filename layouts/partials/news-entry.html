@@ -3,9 +3,9 @@
         {{ if .Params.image }}
             <div class="col col-sm-4">
                 {{ if .Params.outbound }}
-                <a href="{{ .Params.outbound }}" target="_blank"><img src='{{ .Param "image"}}' class="img-fluid lazy" alt="{{ .Title | safeHTML }}"></a>
+                <a href="{{ .Params.outbound }}" target="_blank"><img data-src='{{ .Param "image"}}' class="img-fluid lazyload" alt="{{ .Title | safeHTML }}"></a>
                 {{else}}
-                <a href="{{ .Permalink }}"><img src='{{ .Param "image"}}' class="img-fluid lazy" alt="{{ .Title | safeHTML }}"></a>
+                <a href="{{ .Permalink }}"><img data-src='{{ .Param "image"}}' class="img-fluid lazyload" alt="{{ .Title | safeHTML }}"></a>
                 {{end}}
             </div>
         {{end}}

@@ -2,7 +2,7 @@
 
 <header aria-label="header">
 
-    <a href='{{ "/" | relURL }}' id="headerLogo"><img src='{{ "img/logo.svg" | relURL }}' alt="{{ .Site.Title }} Logo"></a>
+    <a href='{{ "/" | relURL }}' id="headerLogo"><img class="lazyload" data-src='{{ "img/logo.svg" | relURL }}' alt="{{ .Site.Title }} Logo"></a>
 
     <nav role="navigation" aria-label="menu">
         <a href="javascript:void(0)" id="toggle-menu"><i class="fa fa-bars"></i>&nbsp; Menu</a>

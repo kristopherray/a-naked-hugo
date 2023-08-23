@@ -10,7 +10,7 @@
                 {{ range where (.Site.RegularPages.ByWeight) "Type" "logos" }}
                 <div class="item flex">
                     <div class="logoBx">
-                        <img src="{{ .Params.image }}" alt="{{ .Title }} Logo" />
+                        <img class="lazyload" data-src="{{ .Params.image }}" alt="{{ .Title }} Logo" />
                     </div>
                 </div>
                 {{end}}

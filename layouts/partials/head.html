@@ -60,11 +60,21 @@
     <meta name="twitter:creator" content="@{{ .Site.Params.twitter_user }}" />
     {{ end }}
 
-    <script id="defer-js" src="https://cdn.jsdelivr.net/npm/@shinsenter/defer.js@2.5.0/dist/defer_plus.min.js"></script>
+    <script src="/js/lazysizes.min.js" async=""></script>
 
-    <script async src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/js/all.min.js" crossorigin="anonymous"></script>
+    <script id="defer-js" src="/js/defer.js"></script>
 
-    <link rel="stylesheet" href="https://use.typekit.net/fej5sdm.css">
+    <script defer src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/js/all.min.js" crossorigin="anonymous"></script>
+
+    <script>
+        // Define the URL for the stylesheet
+        var typekitUrl = 'https://use.typekit.net/fej5sdm.css';
+
+        // Use Defer.js to defer the loading of the stylesheet
+        Defer.css(typekitUrl, 'typekit-css', 0, function() {
+            console.info('Typekit stylesheet is loaded.'); // debug
+        });
+    </script>
 
     {{ $sass := resources.Get "css/style.scss" }}
     {{ $style := $sass | resources.ToCSS | minify }}
@@ -72,6 +82,39 @@
     <link   rel="stylesheet"
             href="{{ $style.Permalink }}"
             media="screen">
+
+    {{ if .Site.Params.gtm }}
+    <script>
+        var GTM_ID = '{{ .Site.Params.gtm }}';
+        window.dataLayer = window.dataLayer || [];
+        dataLayer.push(['js', new Date()]);
+        dataLayer.push(['config', GTM_ID]);
+      
+        Defer.js('https://www.googletagmanager.com/gtag/js?id=' + GTM_ID, 'google-tag', 0, function() {
+          console.info('Google Tag Manager is loaded.'); // debug
+        }, false);
+    </script>
+    {{end}}
+
+    {{ if .Site.Params.ga }}
+    <script>
+        // Define the Google Analytics configurations
+        var GA_ID = '{{ .Site.Params.ga }}';
+
+        // Initialize the dataLayer and gtag function
+        window.dataLayer = window.dataLayer || [];
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+        gtag('js', new Date());
+
+        // Use Defer.js to load the Google Analytics script
+        Defer.js('https://www.googletagmanager.com/gtag/js?id=' + GA_ID, 'google-analytics-script', 0, function() {
+            console.info('Google Analytics script is loaded.'); // debug
+            gtag('config', GA_ID);
+        }, false);
+    </script>
+    {{end}}
 
     <!-- Enable for NetlifyCMS -->
     {{/*  <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>  */}}
