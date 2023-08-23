@@ -19,7 +19,7 @@
                     <div class="row {{ .Params.position }} ">
                         {{if .Params.section_image}}
                         <div class="col sectionImgCol aos-item" data-aos="fade">
-                            <img data-src="{{.Params.section_image}}"/>
+                            <img data-src="{{.Params.section_image}}" alt="{{ .Title }} {{ .Params.Site.Title }} Section Image"/>
                         </div>
                         {{end}}
                         <div class="col col-12 sectionColTxt {{ .Params.size }} aos-item" data-aos="fade-in">
