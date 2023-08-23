@@ -8,6 +8,7 @@ sections: "home"
 banner_image: https://picsum.photos/1200/600
 banner_video: 845939562
 banner_btn_label: Call to Action →
+btn_link: https://kristopherray.com
 sitemap:
   priority: 1
 ---
