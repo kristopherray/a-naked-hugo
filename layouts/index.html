@@ -13,8 +13,8 @@
 
     {{if .Params.banner_video}} 
     <div class="banner-image bg-image video-wrapper">
-        <iframe src="https://player.vimeo.com/video/{{.Params.banner_video}}?background=1" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
-        <script src="https://player.vimeo.com/api/player.js"></script>
+        <iframe class="lazyload" data-src="https://player.vimeo.com/video/{{.Params.banner_video}}?background=1" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+        <script defer src="https://player.vimeo.com/api/player.js"></script>
     </div>
     {{end}}
 
