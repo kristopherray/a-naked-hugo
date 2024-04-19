@@ -1,15 +1,12 @@
 [build]
   publish = "public"
-  command = "hugo --gc --minify"
+  command = "hugo --gc --minify && cp robots.production.txt public/robots.txt"
   functions = "netlify/functions"
 
 [context.production.environment]
   HUGO_VERSION = "0.119.0"
   HUGO_ENV = "production"
   HUGO_ENABLEGITINFO = "true"
-
-[context.production.build]
-command = "hugo --gc -b $DEPLOY_PRIME_URL && cp robots.production.txt public/robots.txt"
 
 [context.split1]
   command = "hugo --gc --minify --enableGitInfo"
