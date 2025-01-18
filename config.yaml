@@ -1,11 +1,10 @@
 baseURL:
 languageCode: en-us
-title: Naked Hugo
+title: 
 taxonomies:
   category: categories
   section_category: section_categories
 enableRobotsTXT: true
-paginate: 1
 params:
   twitter_user: kris_ray
   twitter_link: https://twitter.com/

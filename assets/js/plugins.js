@@ -13,7 +13,7 @@ $(document).ready(function() {
 });
 
 $(document).mouseup(function(e){
-    if(window.matchMedia('(max-width: 1199px)').matches){
+    if(window.matchMedia('(max-width: 767px)').matches){
         var menu = $('nav ul');
         if (!menu.is(e.target) // The target of the click isn't the container.
         && menu.has(e.target).length === 0) // Nor a child element of the container
@@ -24,10 +24,10 @@ $(document).mouseup(function(e){
 });
 
 $(window).resize(function() {
-    if(window.matchMedia('(min-width: 1200px)').matches) {
+    if(window.matchMedia('(min-width: 768px)').matches) {
         $('nav ul').show();
     }
-    if(window.matchMedia('(max-width: 1199px)').matches) {
+    if(window.matchMedia('(max-width: 767px)').matches) {
         $('nav ul').hide();
     }
 });

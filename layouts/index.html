@@ -20,15 +20,15 @@
 
     <div class="container">
         <div class="row">
-            <div class="col col-12 col-md-8 col-lg-8 bannerTxtCol">
-                <div class="bannerTxtBx animated fadeIn">
-                    <h2>
+            <div class="col col-12 text-center">
+                <div class="bannerTxtBx animated fadeInScale">
+                    <h1>
                         {{if .Params.banner_title}}
                         {{.Params.banner_title|safeHTML}}
                         {{ else}}
                         {{ .Title | safeHTML }}
                         {{end}}
-                    </h2>
+                    </h1>
 
                     {{if .Params.banner_tagline}}
                     <div class="bannerTagline">

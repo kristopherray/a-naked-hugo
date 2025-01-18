@@ -5,10 +5,10 @@ $button-font: proxima-nova, sans-serif;
 $base-fontsize: 16px;
 
 /* Form and Button Styling */
-$button-radius: 8px;
-$form-radius: 8px;
-$line-height-desktop: 64px;
-$line-height-mobile: 48px;
+$button-radius: 0;
+$form-radius: 0;
+$line-height-desktop: 60px;
+$line-height-mobile: 40px;
 
 $input-padding-top: 7px;
 $input-padding-right: 7px;
@@ -21,8 +21,10 @@ $body-background: #fff;
 $transition: .25s;
 
 /* Colors */
-$default: #333;
+$default: #212121;
 $light-grey: #555;
 $btn-color: $default;
 $facebook-blue: #3b5998;
 $twitter-blue: #1DA1F2;
+
+$gold: #A6885C;

@@ -1,7 +1,7 @@
 <div class="entry col-12 mb-3">
-    <div class="d-flex justify-content-center align-items-center">
+    <div class="d-sm-flex justify-content-center align-items-center">
         {{ if .Params.image }}
-            <div class="col col-sm-4">
+            <div class="col col-12 col-sm-4">
                 {{ if .Params.outbound }}
                 <a href="{{ .Params.outbound }}" target="_blank"><img data-src='{{ .Param "image"}}' class="img-fluid lazyload" alt="{{ .Title | safeHTML }}"></a>
                 {{else}}
@@ -9,7 +9,7 @@
                 {{end}}
             </div>
         {{end}}
-        <div class="content col col-sm-8">
+        <div class="content col col-12 col-sm-8">
 
 
             {{ if .Params.categories }}

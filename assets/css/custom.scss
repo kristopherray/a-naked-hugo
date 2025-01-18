@@ -1,52 +1,19 @@
 a {
   text-decoration: none;
-}
+  color: $gold;
 
-section {
-  position:relative;
-  .container {
-    z-index:9;
-    position:relative;
-    padding: 0 20px;
-  }
-}
-
-.button {
   &:hover, &:focus {
-    border-color: $blue;
-    background: $blue;
-    color:#fff;
+    color: $gold;
   }
 }
 
-.social-share {
-  list-style: none;
-  margin:0 0 2rem;
-  padding:0;
-
-  li {
-    display: inline-block;
-    text-shadow: 0px 1px 2px rgba(0,0,0,.55);
-
-    &.facebook {
-      .button {
-        background: $facebook-blue;
-        border-color: $facebook-blue;
-      }
-    }
-
-    &.twitter {
-      .button {
-        background: darken($twitter-blue, 5%);
-        border-color: darken($twitter-blue, 5%);
-      }
-    }
-  }
+body, html {
+  background: $default;
 }
 
 header {
-  padding:1rem;
-  position: relative;
+  padding:0 1rem;
+  width:100%;
   z-index: 90;
   display:flex;
   align-items: center;
@@ -54,12 +21,12 @@ header {
 
   #headerLogo {
     display:inline-block;
-    width:170px;
+    width:100px;
     padding:0 5px;
     margin:0 1rem 0 0;
 
     @media(max-width:575px){
-      width:125px;
+      width:80px;
     }
 
     img {
@@ -78,14 +45,12 @@ header {
       display:none;
       font-size:1.25em;
       padding:0 10px;
-      color:#666;
+      color:#fff;
       -webkit-transition: all .3s;
       -moz-transition: all .3s;
       -ms-transition: all .3s;
       -o-transition: all .3s;
       transition: all .3s;
-      height:4rem;
-      line-height:4rem;
 
       &:hover, &:focus {
         background: $btn-color;
@@ -108,7 +73,7 @@ header {
       @media(max-width:767px){
         display:none;
         position:absolute;
-        background:#f3f3f3;
+        background:$default;
         width:200px;
         z-index: 99;
         right:0;
@@ -139,7 +104,7 @@ header {
 
         a {
           padding:5px;
-          color: #333;
+          color: #fff;
 
           &:hover, &:focus {
             text-decoration: underline;
@@ -150,7 +115,7 @@ header {
             padding:10px;
 
             &:hover, &:focus {
-              background: darken(#f3f3f3,10%);
+              background: #000;
             }
 
           }
@@ -160,8 +125,9 @@ header {
     }
 
     .button {
-      background: $blue;
-      border-color: $blue;
+      background: $gold;
+      color: $default;
+
       @media(max-width:767px){
         padding:0;
         border-radius:0;
@@ -172,19 +138,13 @@ header {
 }
 
 #banner {
-  background:$default;
-  color:#fff;
-  font-size:20px;
-
-  @media(max-width: 767px){
-    font-size:15px;
-  }
+  background: #fff;
 
   h1,h2 {
-    font-size:4.20em;
+    font-size:60px;
 
     @media(max-width:767px){
-      font-size:3.25em;
+      font-size:40px;
     }
   }
 
@@ -193,7 +153,6 @@ header {
 
     a {
       font-weight:bold;
-      color:#fff;
       
       &:hover, &:focus {
         text-decoration: underline;
@@ -236,6 +195,23 @@ header {
     @extend .video-wrapper
    }
 
+   &:before {
+    content:'';
+    width:100%;
+    height:100%;
+    display:block;
+    position:absolute;
+    top:0; 
+    left:0;
+    background: linear-gradient(0deg, #fff 20%, rgba(255, 255, 255, 0.5) 100%);
+    z-index: 9;
+  }
+
+  @media(max-width:767px){  
+    &:before{
+      background: linear-gradient(0deg, #fff 0%, rgba(255, 255, 255, .7) 100%);
+    }
+  }
 
 }
 
@@ -245,7 +221,7 @@ form {
       border-color:#fff;
 
       &:hover, &:focus {
-        border-color:$blue;
+        border-color:$gold;
       }
     }
 
@@ -257,7 +233,8 @@ form {
 }
 
 #clients {
-  padding: 42px 0 32px;
+  padding: 24px 0;
+  background: #fff;
 
   .container-fluid {
     padding:0;
@@ -292,7 +269,7 @@ form {
 
 #signup {
   padding:2rem 0;
-  background:darken($default,5%);
+  background:$default;
 
   h2 a {
     color: #fff;
@@ -300,30 +277,9 @@ form {
 }
 
 
-#formSection {
-  background:#333;
-
-  .container {
-    max-width:1000px;
-  }
-
-  .checkbox {
-    color:#fff;
-
-    input[type=checkbox]:checked+label:before {
-      color: $blue;
-    }
-  }
-
-  .button {
-    background: $blue;
-    border-color: $blue;
-  }
-}
-
 footer {
   padding:3rem 0 10rem;
-  background: #000;
+  background: $default;
   color:#fff;
 
   #footerSocial {
@@ -360,16 +316,17 @@ footer {
   background: $default;
 }
 
-//* {
-//  transition: filter .25s;
-//}
-//.mfp-wrap ~ * {
-//  filter: blur(10px);
-//}
+* {
+ transition: filter .25s;
+}
+.mfp-wrap ~ * {
+ filter: blur(10px);
+}
 
 #inquire {
-  background:#fff;
+  background:rgba(255,255,255,.35);
   padding:5%;
+  border-radius:8px;
 
   .button {
     margin-top:1rem;
@@ -480,13 +437,12 @@ footer {
 #home {
 
   #banner {
-    @media(max-width:767px){
-      padding:32px 0 300px
-    }
+    padding-bottom:30px;
 
-    h2 {
+    h1 {
       position: relative;
       display: inline-block;
+      color: $default;
       span {
         font-size:.25em !important;
         position: absolute;
@@ -494,44 +450,18 @@ footer {
         top:-20px;
       }
     }
-
-    &:before {
-      content:'';
-      width:100%;
-      height:100%;
-      display:block;
-      position:absolute;
-      top:0; 
-      left:0;
-      background: linear-gradient(90deg, #000 20%, rgba(0, 0, 0, 0) 70%);
-      z-index: 9;
-    }
-  
-    @media(max-width:767px){  
-      &:before{
-        background: linear-gradient(180deg, #000 30%, rgba(0, 0, 0, .2) 100%);
-      }
-    }
   
   }
 
   #latest-news {
     background: #000;
-    padding: 80px 0;
+    padding: 60px 0;
 
     h2 {
       color: #fff;
     }
   }
 
-  .standard-home {
-    padding:20px 0;
-    img {
-      @media(max-width:575px){
-        margin-bottom:20px;
-      }
-    }
-  }
 }
 
 .entry {
@@ -562,7 +492,7 @@ footer {
 
 .list-default {
   #banner {
-    padding: 80px 0 32px;
+    padding: 60px 0 40px;
   }
 
   #page-content {
@@ -571,7 +501,7 @@ footer {
 
   main {
     background: #333;
-    padding-bottom:5rem;
+    padding: 40px 0;
 
     .entry {
       background:#fff;
@@ -589,32 +519,10 @@ footer {
 
 .single-default {
 
-  #banner {
-    &:before {
-      content:'';
-      width:100%;
-      height:100%;
-      display:block;
-      position:absolute;
-      top:0; 
-      left:0;
-      background: linear-gradient(360deg, #000 20%, rgba(0, 0, 0, .2) 90%);
-      z-index: 9;
-    }
-  
-    @media(max-width:767px){  
-      &:before{
-        background: linear-gradient(360deg, #000 30%, rgba(0, 0, 0, .2) 100%);
-      }
-    }
-
-    .container {
-      max-width:900px;
-    }
-  
-  }
-
   main {
+    background: #fff;
+    padding-bottom:40px;
+
     .container {
       max-width:900px;
 
@@ -648,7 +556,7 @@ footer {
           content:'';
           width:5px;
           height:100%;
-          background: $blue;
+          background: $gold;
           display:block;
           position:absolute;
           left:0;
