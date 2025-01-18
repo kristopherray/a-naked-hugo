@@ -43,3 +43,6 @@ menu:
     - name: News
       url: /news/
       weight: -10
+    - name: Contact
+      url: /contact/
+      weight: -5

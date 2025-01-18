@@ -495,10 +495,6 @@ footer {
     padding: 60px 0 40px;
   }
 
-  #page-content {
-    color: #fff;
-  }
-
   main {
     background: #333;
     padding: 40px 0;
@@ -564,5 +560,11 @@ footer {
         }
       }
     }
+  }
+}
+
+#contactPage {
+  .checkbox {
+    color: #fff;
   }
 }
