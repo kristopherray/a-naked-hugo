@@ -58,6 +58,7 @@
         <meta name="twitter:creator" content="@{{ .Site.Params.twitter_user }}" />
     {{ end }}
 
+    <!-- SiteBaseURL + Small Image (<1mb) Required for Twitter Card to Work -->
     {{ if .Params.og_img }}
         <meta property="og:image" content="{{ .Site.BaseURL }}{{ .Params.og_img }}"/>
         <meta name="twitter:image" content="{{ .Site.BaseURL }}{{ .Params.og_img }}"/>
