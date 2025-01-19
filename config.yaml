@@ -28,6 +28,7 @@ markup:
       attribute:
         block: true
         title: true
+        wrapStandAloneImageWithinParagraph: false
       autoHeadingID: true
       autoHeadingIDType: github
       wrapStandAloneImageWithinParagraph: false
