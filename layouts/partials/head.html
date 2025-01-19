@@ -10,6 +10,12 @@
     -- Remove <title> in else if used --
     -->
 
+    {{ with .Params.relcanonical }}
+    <link rel="canonical" href="{{ . | relLangURL }}" itemprop="url" />
+    {{ else -}}
+    <link rel="canonical" href="{{ .Permalink }}" itemprop="url" />
+    {{ end -}}
+
     {{ if .Params.metaTitle }}
     <title>{{ .Params.metaTitle | plainify }} | {{ .Site.Title }}</title>
     <meta name="twitter:title" content="{{ .Params.metatitle | plainify }}"/>
