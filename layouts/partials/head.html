@@ -9,39 +9,6 @@
         <title>{{ .Title | plainify }} | {{ .Site.Title }}</title>
     -- Remove <title> in else if used --
     -->
-
-    {{ with .Params.relcanonical }}
-    <link rel="canonical" href="{{ . | relLangURL }}" itemprop="url" />
-    {{ else -}}
-    <link rel="canonical" href="{{ .Permalink }}" itemprop="url" />
-    {{ end -}}
-
-    {{ if .Params.metaTitle }}
-    <title>{{ .Params.metaTitle | plainify }} | {{ .Site.Title }}</title>
-    <meta name="twitter:title" content="{{ .Params.metatitle | plainify }}"/>
-    <meta property="og:title" content="{{ .Params.metatitle | plainify }}"/>
-    <meta property="og:site_name" content="{{ .Params.metatitle | plainify }}"/>
-    {{else}}
-    <title>{{ .Title | plainify | truncate 60 }} | {{ .Site.Title }}</title>
-    <meta name="twitter:title" content="{{ .Title | plainify | truncate 60 }} | {{ .Site.Title }}"/>
-    <meta property="og:title" content="{{ .Title | plainify | truncate 60 }} | {{ .Site.Title }}"/>
-    <meta property="og:site_name" content="{{ .Title | plainify | truncate 60 }} | {{ .Site.Title }}"/>
-    {{end}}
-    
-
-    {{ if .Params.metaDescription }}
-    <meta name="description" content="{{ .Params.metaDescription | plainify }}"/>
-    <meta property="og:description" content="{{ .Params.metaDescription | plainify }}"/>
-    <meta name="twitter:description" content="{{ .Params.metaDescription | plainify }}"/>
-    {{else}}
-    <meta name="description" content="{{ .Description | plainify | truncate 155 }}"/>
-    <meta property="og:description" content="{{ .Description | plainify | truncate 155 }}"/>
-    <meta name="twitter:description" content="{{ .Description | plainify | truncate 155 }}"/>
-    {{end}}
-
-    <meta property="og:url" content="{{ .Permalink }}"/>
-    <meta name="twitter:url" content="{{ .Permalink }}"/>
-
     <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png">
@@ -50,20 +17,58 @@
     <meta name="msapplication-TileColor" content="#da532c">
     <meta name="theme-color" content="#ffffff">
 
+    {{ with .Params.relcanonical }}
+        <link rel="canonical" href="{{ . | relLangURL }}" itemprop="url" />
+    {{ else -}}
+        <link rel="canonical" href="{{ .Permalink }}" itemprop="url" />
+    {{ end -}}
+
+    {{ if .Params.metaTitle }}
+        <title>{{ .Params.metaTitle | plainify }} | {{ .Site.Title }}</title>
+        <meta name="twitter:title" content="{{ .Params.metaTitle | plainify }}"/>
+        <meta property="og:title" content="{{ .Params.metaTitle | plainify }}"/>
+        <meta property="og:site_name" content="{{ .Site.Title | plainify }}"/>
+    {{ else }}
+        <title>{{ .Title | plainify | truncate 60 }} | {{ .Site.Title }}</title>
+        <meta name="twitter:title" content="{{ .Title | plainify | truncate 60 }} | {{ .Site.Title }}"/>
+        <meta property="og:title" content="{{ .Title | plainify | truncate 60 }} | {{ .Site.Title }}"/>
+        <meta property="og:site_name" content="{{ .Site.Title | plainify }}"/>
+    {{ end }}
+
+    {{ if .Params.metaDescription }}
+        <meta name="description" content="{{ .Params.metaDescription | plainify }}"/>
+        <meta property="og:description" content="{{ .Params.metaDescription | plainify }}"/>
+        <meta name="twitter:description" content="{{ .Params.metaDescription | plainify }}"/>
+    {{ else if .Description }}
+        <meta name="description" content="{{ .Description | plainify | truncate 155 }}"/>
+        <meta property="og:description" content="{{ .Description | plainify | truncate 155 }}"/>
+        <meta name="twitter:description" content="{{ .Description | plainify | truncate 155 }}"/>
+    {{ else }}
+        <meta name="description" content="{{ .Site.Params.description | plainify | truncate 155 }}"/>
+        <meta property="og:description" content="{{ .Site.Params.description | plainify | truncate 155 }}"/>
+        <meta name="twitter:description" content="{{ .Site.Params.description | plainify | truncate 155 }}"/>
+    {{ end }}
+
+    <meta property="og:url" content="{{ .Permalink }}"/>
+    <meta name="twitter:url" content="{{ .Permalink }}"/>
     <meta name="twitter:card" content="summary_large_image"/>
 
     {{ if isset .Site.Params "twitter_user" }}
-    <meta name="twitter:site" content="@{{ .Site.Params.twitter_user }}" />
-    <meta name="twitter:creator" content="@{{ .Site.Params.twitter_user }}" />
+        <meta name="twitter:site" content="@{{ .Site.Params.twitter_user }}" />
+        <meta name="twitter:creator" content="@{{ .Site.Params.twitter_user }}" />
     {{ end }}
 
     {{ if .Params.og_img }}
-    <meta property="og:image" content='{{ .Params.og_img }}'/>
-    <meta name="twitter:image" content='{{.Site.BaseURL}}{{ .Params.og_img }}'/>
+        <meta property="og:image" content="{{ .Params.og_img }}"/>
+        <meta name="twitter:image" content="{{ .Params.og_img }}"/>
+    {{ else if .Site.BaseURL }}
+        <meta property="og:image" content="{{ .Site.BaseURL }}img/og-img.png"/>
+        <meta name="twitter:image" content="{{ .Site.BaseURL }}img/og-img.png"/>
     {{ else }}
-    <meta property="og:image" content="{{.Site.BaseURL}}/img/og-img.png"/>
-    <meta name="twitter:image" content="{{.Site.BaseURL}}/img/og-img.png"/>
+        <meta property="og:image" content="/img/og-img.png"/>
+        <meta name="twitter:image" content="/img/og-img.png"/>
     {{ end }}
+
     <meta property="og:image:width" content="1200"/>
     <meta property="og:image:height" content="628"/>
 
