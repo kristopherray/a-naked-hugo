@@ -59,14 +59,11 @@
     {{ end }}
 
     {{ if .Params.og_img }}
-        <meta property="og:image" content="{{ .Params.og_img }}"/>
-        <meta name="twitter:image" content="{{ .Params.og_img }}"/>
-    {{ else if .Site.BaseURL }}
-        <meta property="og:image" content="{{ .Site.BaseURL }}img/og-img.png"/>
-        <meta name="twitter:image" content="{{ .Site.BaseURL }}img/og-img.png"/>
+        <meta property="og:image" content="{{ .Site.BaseURL }}{{ .Params.og_img }}"/>
+        <meta name="twitter:image" content="{{ .Site.BaseURL }}{{ .Params.og_img }}"/>
     {{ else }}
-        <meta property="og:image" content="/img/og-img.png"/>
-        <meta name="twitter:image" content="/img/og-img.png"/>
+        <meta property="og:image" content="{{ .Site.BaseURL }}/img/og-img.png"/>
+        <meta name="twitter:image" content="{{ .Site.BaseURL }}/img/og-img.png"/>
     {{ end }}
 
     <meta property="og:image:width" content="1200"/>
