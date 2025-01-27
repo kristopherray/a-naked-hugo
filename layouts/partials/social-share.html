@@ -1,3 +1,19 @@
-<li class="facebook"><a class="button" href="https://www.facebook.com/sharer/sharer.php?u={{ .Permalink }}?utm_source=website&utm_campaign=organic" target=_blank><i class="fab fa-facebook-square"></i>&nbsp; Share This</a></li>
+<li class="facebook">
+    <a class="button" href="https://www.facebook.com/sharer/sharer.php?u={{ .Permalink }}?utm_source=website&utm_campaign=organic" target=_blank><i class="fab fa-facebook-square"></i>&nbsp; Share This</a>
+</li>
 
-<li class="twitter"><a class="button" href="https://twitter.com/intent/tweet?text={{ .Permalink }}?utm_source=website" target=_blank><i class="fab fa-twitter"></i>&nbsp; Tweet This</a></li>
+<li class="twitter">
+    <a class="button" href="https://twitter.com/intent/tweet?text={{ .Permalink }}?utm_source=website" target=_blank><i class="fa-brands fa-x-twitter"></i>&nbsp; Tweet This</a>
+</li>
+
+<li class="linkedin">
+    <a class="button" href="https://www.linkedin.com/sharing/share-offsite/?url={{ .Permalink }}" target="_blank">
+        <i class="fa-brands fa-linkedin"></i>
+    </a>
+</li>
+
+<li class="email">
+    <a class="button" href="mailto:?subject=Check this out!&body=I thought you might find this interesting: {{ .Permalink }}" target="_blank">
+        <i class="fa-solid fa-envelope"></i>
+    </a>
+</li>
