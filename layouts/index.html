@@ -13,8 +13,13 @@
 
     {{if .Params.banner_video}} 
     <div class="banner-image bg-image video-wrapper">
-        <iframe title="{{ .Params.Site.Title }} Home Banner Background Video" class="lazyload" data-src="https://player.vimeo.com/video/{{.Params.banner_video}}?background=1" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
-        <script defer src="https://player.vimeo.com/api/player.js"></script>
+        <!-- Vimeo -->
+        {{/*  <iframe title="{{ .Params.Site.Title }} Home Banner Background Video" class="lazyload" data-src="https://player.vimeo.com/video/{{.Params.banner_video}}?background=1" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+        <script defer src="https://player.vimeo.com/api/player.js"></script>  */}}
+
+        <!-- Youtube -->
+        <iframe title="{{ .Params.Site.Title }} Home Banner Background Video" class="lazyload" data-src="https://www.youtube.com/embed/{{.Params.banner_video}}?autoplay=1&mute=1&controls=0&loop=1" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+        <script defer src="https://www.youtube.com/iframe_api"></script>
     </div>
     {{end}}
 
