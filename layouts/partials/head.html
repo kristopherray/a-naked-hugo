@@ -24,7 +24,7 @@
     {{ end -}}
 
     {{ if .Params.metaTitle }}
-        <title>{{ .Params.metaTitle | plainify }} | {{ .Site.Title }}</title>
+        <title>{{ .Params.metaTitle | plainify }}</title>
         <meta name="twitter:title" content="{{ .Params.metaTitle | plainify }}"/>
         <meta property="og:title" content="{{ .Params.metaTitle | plainify }}"/>
         <meta property="og:site_name" content="{{ .Site.Title | plainify }}"/>
@@ -70,21 +70,13 @@
     <meta property="og:image:width" content="1200"/>
     <meta property="og:image:height" content="628"/>
 
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <script src="/js/lazysizes.min.js" async=""></script>
-
     <script id="defer-js" src="/js/defer.js"></script>
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
-    <script>
-        // Define the URL for the stylesheet
-        var typekitUrl = 'https://use.typekit.net/fej5sdm.css';
-
-        // Use Defer.js to defer the loading of the stylesheet
-        Defer.css(typekitUrl, 'typekit-css', 0, function() {
-            console.info('Typekit stylesheet is loaded.'); // debug
-        });
-    </script>
+    <link rel="stylesheet" href="https://use.typekit.net/fej5sdm.css">
 
     {{ $sass := resources.Get "css/style.scss" }}
     {{ $style := $sass | css.Sass | minify }}
@@ -106,25 +98,6 @@
     </script>
     {{end}}
 
-    {{ if .Site.Params.ga }}
-    <script>
-        // Define the Google Analytics configurations
-        var GA_ID = '{{ .Site.Params.ga }}';
-
-        // Initialize the dataLayer and gtag function
-        window.dataLayer = window.dataLayer || [];
-        function gtag() {
-            dataLayer.push(arguments);
-        }
-        gtag('js', new Date());
-
-        // Use Defer.js to load the Google Analytics script
-        Defer.js('https://www.googletagmanager.com/gtag/js?id=' + GA_ID, 'google-analytics-script', 0, function() {
-            console.info('Google Analytics script is loaded.'); // debug
-            gtag('config', GA_ID);
-        }, false);
-    </script>
-    {{end}}
 
     {{if .Params.banner_image}} 
     <link rel="preload" fetchpriority="high" as="image" href="{{.Params.banner_image}}" type="image/webp">

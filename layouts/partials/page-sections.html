@@ -5,29 +5,34 @@
         {{ range $v.Pages }}
             <section id="{{ .Params.id }}">
 
-                {{ if .Params.image }}
-                <div class="bg-image">
-                    <img data-src='{{ .Params.image }}' class="lazyload img-fluid" alt="{{ .Site.Title }} - {{ .Title }} Image">
-                </div>
-                {{end}}
+                {{ if .Params.custom_section }}
+                {{.Content}}
+                {{ else }}
 
-                {{ if .Params.vimeobg }}
-                <div class="video-wrapper bg-image"><iframe src="https://player.vimeo.com/video/{{.Params.vimeobg}}?background=1" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe><script src="https://player.vimeo.com/api/player.js"></script></div>
-                {{end}}
+                    {{ if .Params.image }}
+                    <div class="bg-image">
+                        <img data-src='{{ .Params.image }}' class="lazyload img-fluid" alt="{{ .Site.Title }} - {{ .Title }} Image">
+                    </div>
+                    {{end}}
 
-                <div class="container">
-                    <div class="row {{ .Params.position }} ">
-                        {{if .Params.section_image}}
-                        <div class="col sectionImgCol aos-item" data-aos="fade">
-                            <img data-src="{{.Params.section_image}}" alt="{{ .Title }} {{ .Params.Site.Title }} Section Image"/>
-                        </div>
-                        {{end}}
-                        <div class="col col-12 sectionColTxt {{ .Params.size }} aos-item" data-aos="fade-in">
-                        {{ .Content }}
+                    {{ if .Params.vimeobg }}
+                    <div class="video-wrapper bg-image"><iframe src="https://player.vimeo.com/video/{{.Params.vimeobg}}?background=1" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe><script src="https://player.vimeo.com/api/player.js"></script></div>
+                    {{end}}
+
+                    <div class="container">
+                        <div class="row {{ .Params.position }} ">
+                            {{if .Params.section_image}}
+                            <div class="col sectionImgCol aos-item" data-aos="fade">
+                                <img data-src="{{.Params.section_image}}" class="lazyload" alt="{{ .Title }} {{ .Params.Site.Title }} Section Image"/>
+                            </div>
+                            {{end}}
+                            <div class="col col-12 sectionColTxt {{ .Params.size }} aos-item" data-aos="fade">
+                            {{ .Content }}
+                            </div>
                         </div>
                     </div>
-                </div>
-
+                    
+                {{ end }}
             </section>
         {{ end }}
     {{ end }}
